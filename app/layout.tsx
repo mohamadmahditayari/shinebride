@@ -15,28 +15,39 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ShineBride",
-  description: "اکسسوری لوکس عروس",
+  title: "ShineBride | اکسسوری لوکس عروس",
+  description: "فروشگاه اکسسوری‌های خاص و لوکس عروس با طراحی مدرن و لاکچری",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="fa"
       dir="rtl"
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body className="bg-[#faf8f5] text-gray-800 min-h-screen flex flex-col">
+      <body
+        className="
+          min-h-screen
+          flex flex-col
+          bg-gradient-to-b from-white to-[#faf8f5]
+          text-gray-800
+          antialiased
+        "
+      >
+        {/* NAVBAR */}
         <Navbar />
 
+        {/* MAIN CONTENT */}
         <main className="flex-1">
           {children}
         </main>
 
+        {/* FOOTER */}
         <Footer />
       </body>
     </html>
