@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { esfandProducts } from "@/data/esfand";
@@ -19,9 +21,7 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <main className="max-w-6xl mx-auto px-6 py-16">
-
       <div className="grid md:grid-cols-2 gap-12">
-
         <div>
           <Image
             src={product.images[0]}
@@ -48,9 +48,7 @@ export default async function ProductPage({ params }: Props) {
         </div>
 
         <div className="flex flex-col justify-center">
-          <h1 className="text-4xl font-bold">
-            {product.name}
-          </h1>
+          <h1 className="text-4xl font-bold">{product.name}</h1>
 
           <p className="text-2xl text-[#D4AF37] font-bold mt-4">
             {product.price} میلیون تومان
@@ -60,9 +58,7 @@ export default async function ProductPage({ params }: Props) {
             {product.description}
           </p>
         </div>
-
       </div>
-
     </main>
   );
 }
