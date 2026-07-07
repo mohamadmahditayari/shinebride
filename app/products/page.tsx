@@ -1,46 +1,39 @@
 import Image from "next/image";
 import Link from "next/link";
-
 const products = [
   {
     id: 1,
     title: "اسپند دودکن",
-    price: "۲٬۱۰۰٬۰۰۰ تومان",
     image: "/images/esfand.jpg",
     link: "/products/esfand",
   },
   {
     id: 2,
     title: "ست بله برون",
-    price: "به زودی",
     image: "/images/baleh.jpg",
     link: "#",
   },
   {
     id: 3,
     title: "گیفت",
-    price: "به زودی",
     image: "/images/gift.jpg",
     link: "#",
   },
   {
     id: 4,
     title: "گیفت ماشین",
-    price: "به زودی",
     image: "/images/car.jpg",
     link: "#",
   },
   {
     id: 5,
     title: "پلکسی",
-    price: "به زودی",
     image: "/images/plexi.jpg",
     link: "#",
   },
   {
     id: 6,
     title: "آباژور",
-    price: "به زودی",
     image: "/images/abajour.jpg",
     link: "#",
   },
@@ -49,56 +42,42 @@ const products = [
 export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-[#faf8f5] px-6 py-16">
-
-      <h1 className="text-5xl font-bold text-center text-pink-400 mb-4">
+      <h1 className="mb-4 text-center text-5xl font-bold text-pink-400">
         محصولات ShineBride
       </h1>
 
-      <p className="text-center text-gray-500 mb-12">
+      <p className="mb-12 text-center text-gray-500">
         مجموعه‌ای از خاص‌ترین اکسسوری‌های عروس
       </p>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {products.map((item) => (
-
           <div
             key={item.id}
-            className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition duration-300"
+            className="overflow-hidden rounded-3xl bg-white shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
           >
-
             <Image
               src={item.image}
               alt={item.title}
-              width={600}
-              height={500}
-              className="w-full h-72 object-cover"
+              width={1200}
+              height={1200}
+              className="aspect-square w-full object-cover"
             />
 
             <div className="p-6">
-
-              <h2 className="text-2xl font-bold">
+              <h2 className="text-center text-2xl font-bold text-gray-800">
                 {item.title}
               </h2>
 
-              <p className="mt-3 text-pink-500 text-xl font-bold">
-                {item.price}
-              </p>
-
               <Link href={item.link}>
-                <button className="mt-6 w-full bg-black text-white py-3 rounded-full hover:bg-pink-400 transition">
+                <button className="mt-6 w-full rounded-full bg-black py-3 text-white transition hover:bg-pink-400">
                   مشاهده محصول
                 </button>
               </Link>
-
             </div>
-
           </div>
-
         ))}
-
       </div>
-
     </main>
   );
 }

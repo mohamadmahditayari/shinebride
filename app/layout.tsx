@@ -1,54 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/navbar";
-import Footer from "./components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { CartProvider } from "./context/CartContext";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "ShineBride | اکسسوری لوکس عروس",
-  description: "فروشگاه اکسسوری‌های خاص و لوکس عروس با طراحی مدرن و لاکچری",
+  title: "ShineBride",
+  description: "Luxury Wedding Accessories",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html
-      lang="fa"
-      dir="rtl"
-      className={`${geistSans.variable} ${geistMono.variable}`}
-    >
-      <body
-        className="
-          min-h-screen
-          flex flex-col
-          bg-gradient-to-b from-white to-[#faf8f5]
-          text-gray-800
-          antialiased
-        "
-      >
-        {/* NAVBAR */}
-        <Navbar />
-
-        {/* MAIN CONTENT */}
-        <main className="flex-1">
+    <html lang="fa" dir="rtl">
+      <body className={inter.className}>
+        <CartProvider>
+          <Navbar />
           {children}
-        </main>
-
-        {/* FOOTER */}
-        <Footer />
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

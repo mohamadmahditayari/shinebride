@@ -5,42 +5,36 @@ const products = [
   {
     id: 1,
     title: "اسپند دودکن",
-    price: "۲٬۱۰۰٬۰۰۰ تومان",
     image: "/images/esfand.jpg",
     link: "/products/esfand",
   },
   {
     id: 2,
     title: "ست بله برون",
-    price: "به زودی",
     image: "/images/baleh.jpg",
     link: "#",
   },
   {
     id: 3,
     title: "گیفت",
-    price: "به زودی",
     image: "/images/gift.jpg",
     link: "#",
   },
   {
     id: 4,
     title: "گیفت ماشین",
-    price: "به زودی",
     image: "/images/car.jpg",
     link: "#",
   },
   {
     id: 5,
     title: "پلکسی",
-    price: "به زودی",
     image: "/images/plexi.jpg",
     link: "#",
   },
   {
     id: 6,
     title: "آباژور",
-    price: "به زودی",
     image: "/images/abajour.jpg",
     link: "#",
   },
@@ -95,10 +89,10 @@ export default function Home() {
             Luxury Wedding Accessories
           </p>
 
-          <p className="max-w-2xl mx-auto mt-8 text-gray-600 leading-9 text-lg">
-            خاص‌ترین اکسسوری‌های عروس با طراحی لوکس، کیفیت بالا و
-            ظرافت دست‌ساز برای خاص‌ترین روز زندگی شما.
-          </p>
+          <div className="max-w-2xl mx-auto mt-8 space-y-4 text-right text-lg leading-9 text-gray-700">
+
+
+</div>
 
           <Link href="/products">
             <button
@@ -130,11 +124,9 @@ export default function Home() {
           >
             محصولات ویژه
           </h2>
+<div className="mt-6 space-y-3 text-center text-lg leading-9 text-gray-700">
 
-          <p className="text-gray-500 mt-4">
-            مجموعه‌ای از خاص‌ترین اکسسوری‌های عروس
-          </p>
-
+</div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -168,14 +160,7 @@ export default function Home() {
                   {item.title}
                 </h3>
 
-                <p
-                  className="mt-3 text-xl font-bold"
-                  style={{
-                    color: "#D4AF37",
-                  }}
-                >
-                  {item.price}
-                </p>
+                
 
                 <Link href={item.link}>
 
