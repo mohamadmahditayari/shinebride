@@ -10,4 +10,6 @@ body {
 
 body {
   background: #faf8f5;
+}html{
+  scroll-behavior:smooth;
 }

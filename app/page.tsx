@@ -1,137 +1,191 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+
+const products = [
+  {
+    id: 1,
+    title: "اسپند دودکن",
+    image: "/images/esfand.jpg",
+    link: "/products/esfand",
+  },
+  {
+    id: 2,
+    title: "ست بله برون",
+    image: "/images/baleh.jpg",
+    link: "#",
+  },
+  {
+    id: 3,
+    title: "گیفت",
+    image: "/images/gift.jpg",
+    link: "#",
+  },
+  {
+    id: 4,
+    title: "گیفت ماشین",
+    image: "/images/car.jpg",
+    link: "#",
+  },
+  {
+    id: 5,
+    title: "پلکسی",
+    image: "/images/plexi.jpg",
+    link: "#",
+  },
+  {
+    id: 6,
+    title: "آباژور",
+    image: "/images/abajour.jpg",
+    link: "#",
+  },
+];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#faf8f5]">
-      {/* Hero */}
-      <section className="flex flex-col items-center justify-center text-center px-6 py-24">
-        <h1 className="text-6xl md:text-8xl font-bold tracking-wide text-pink-400">
-          ShineBride
-        </h1>
+    <main
+      className="min-h-screen"
+      style={{
+        background: "linear-gradient(180deg,#ffffff,#faf8f5)",
+        fontFamily: "Doran",
+      }}
+    >
+      {/* HERO */}
 
-        <p className="mt-6 text-xl text-gray-700">
-          اکسسوری لوکس عروس
-        </p>
+      <section className="max-w-7xl mx-auto px-6 pt-20 pb-16">
 
-        <p className="mt-3 text-gray-500 max-w-xl">
-          خاص‌ترین اکسسوری‌های عروس، ست بله‌برون، گیفت، پلکسی،
-          آباژور و اسپند دودکن را با عشق انتخاب کنید.
-        </p>
+        <div className="text-center">
 
-        <div className="mt-10 flex gap-4">
+          <Image
+            src="/images/logo.png"
+            alt="ShineBride"
+            width={120}
+            height={120}
+            className="mx-auto rounded-full shadow-xl"
+          />
+
+          <h1
+            className="mt-8 text-7xl tracking-[16px]"
+            style={{
+              color: "#D4AF37",
+              fontWeight: 300,
+            }}
+          >
+            SHINE
+          </h1>
+
+          <h2
+            className="text-7xl tracking-[16px]"
+            style={{
+              color: "#BFC2C7",
+              fontWeight: 300,
+            }}
+          >
+            BRIDE
+          </h2>
+
+          <div className="w-40 h-[2px] bg-gradient-to-r from-[#D4AF37] to-[#C0C0C0] mx-auto mt-8 rounded-full" />
+
+          <p className="mt-8 text-gray-500 tracking-[4px] uppercase">
+            Luxury Wedding Accessories
+          </p>
+
+          <div className="max-w-2xl mx-auto mt-8 space-y-4 text-right text-lg leading-9 text-gray-700">
+
+
+</div>
+
           <Link href="/products">
-            <button className="bg-black text-white px-8 py-4 rounded-full hover:scale-105 transition">
+            <button
+              className="mt-12 px-10 py-4 rounded-full text-white transition hover:scale-105"
+              style={{
+                background:
+                  "linear-gradient(90deg,#D4AF37,#E8D18A,#C0C0C0)",
+              }}
+            >
               مشاهده محصولات
             </button>
           </Link>
 
-          <button className="border border-black px-8 py-4 rounded-full hover:bg-black hover:text-white transition">
-            درباره ما
-          </button>
         </div>
+
       </section>
 
-      {/* Categories */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
-        <h2 className="text-4xl font-bold text-center mb-12">
-          دسته‌بندی محصولات
-        </h2>
+      {/* PRODUCTS */}
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+      <section className="max-w-7xl mx-auto px-6 pb-24">
 
-          <Link href="/products">
-            <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:-translate-y-2 transition cursor-pointer">
-              <Image
-                src="/images/esfand.jpg"
-                alt="اسپند دودکن"
-                width={500}
-                height={350}
-                className="w-full h-48 object-cover"
-              />
-              <h3 className="p-5 text-xl font-semibold text-center">
-                اسپند دودکن
-              </h3>
+        <div className="text-center mb-16">
+
+          <h2
+            className="text-5xl"
+            style={{
+              color: "#D4AF37",
+            }}
+          >
+            محصولات ویژه
+          </h2>
+<div className="mt-6 space-y-3 text-center text-lg leading-9 text-gray-700">
+
+</div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+          {products.map((item) => (
+
+            <div
+              key={item.id}
+              className="group rounded-3xl overflow-hidden bg-white transition-all duration-500 hover:-translate-y-3"
+              style={{
+                border: "1px solid rgba(212,175,55,.15)",
+                boxShadow: "0 15px 40px rgba(0,0,0,.08)",
+              }}
+            >
+
+              <div className="overflow-hidden">
+
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={700}
+                  height={500}
+                  className="w-full h-80 object-cover transition duration-700 group-hover:scale-110"
+                />
+
+              </div>
+
+              <div className="p-7 text-center">
+
+                <h3 className="text-2xl font-semibold text-gray-800">
+                  {item.title}
+                </h3>
+
+                
+
+                <Link href={item.link}>
+
+                  <button
+                    className="w-full mt-7 py-3 rounded-full text-white transition hover:scale-[1.03]"
+                    style={{
+                      background:
+                        "linear-gradient(90deg,#D4AF37,#C0C0C0)",
+                    }}
+                  >
+                    مشاهده محصول
+                  </button>
+
+                </Link>
+
+              </div>
+
             </div>
-          </Link>
 
-          <Link href="/products">
-            <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:-translate-y-2 transition cursor-pointer">
-              <Image
-                src="/images/baleh.jpg"
-                alt="ست بله برون"
-                width={500}
-                height={350}
-                className="w-full h-48 object-cover"
-              />
-              <h3 className="p-5 text-xl font-semibold text-center">
-                ست بله برون
-              </h3>
-            </div>
-          </Link>
-
-          <Link href="/products">
-            <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:-translate-y-2 transition cursor-pointer">
-              <Image
-                src="/images/gift.jpg"
-                alt="گیفت"
-                width={500}
-                height={350}
-                className="w-full h-48 object-cover"
-              />
-              <h3 className="p-5 text-xl font-semibold text-center">
-                گیفت
-              </h3>
-            </div>
-          </Link>
-
-          <Link href="/products">
-            <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:-translate-y-2 transition cursor-pointer">
-              <Image
-                src="/images/car.jpg"
-                alt="گیفت ماشین"
-                width={500}
-                height={350}
-                className="w-full h-48 object-cover"
-              />
-              <h3 className="p-5 text-xl font-semibold text-center">
-                گیفت ماشین
-              </h3>
-            </div>
-          </Link>
-
-          <Link href="/products">
-            <div className="bg-white rounded-3xl shadow-lg overflow-hidden hover:-translate-y-2 transition cursor-pointer">
-              <Image
-                src="/images/plexi.jpg"
-                alt="پلکسی"
-                width={500}
-                height={350}
-                className="w-full h-48 object-cover"
-              />
-              <h3 className="p-5 text-xl font-semibold text-center">
-                پلکسی
-              </h3>
-            </div>
-          </Link>
-
-          <Link href="/products">
-            <div className="bg-white rounded-3xlshadow-lg overflow-hidden hover:-translate-y-2 transition cursor-pointer">
-              <Image
-                src="/images/abajour.jpg"
-                alt="آباژور"
-                width={500}
-                height={350}
-                className="w-full h-48 object-cover"
-              />
-              <h3 className="p-5 text-xl font-semibold text-center">
-                آباژور
-              </h3>
-            </div>
-          </Link>
+          ))}
 
         </div>
+
       </section>
+
     </main>
   );
 }
