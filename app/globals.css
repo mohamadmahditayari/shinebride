@@ -1,15 +1,122 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Doran";
+  src: url("/fonts/TKT-Sheed black.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  font-family: "Doran", sans-serif;
 }
 
 body {
   background: #faf8f5;
-}html{
-  scroll-behavior:smooth;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes logoShineSweep {
+  0% {
+    transform: translateX(-180%) rotate(30deg);
+  }
+  30% {
+    transform: translateX(280%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(280%) rotate(30deg);
+  }
+}
+
+@keyframes spinGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinGlowReverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes floatLogo {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+  }
+}
+
+@keyframes sparklePop {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3) rotate(180deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.98);
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.8));
+  }
+}
+
+.animate-shine-sweep {
+  animation: logoShineSweep 3s infinite ease-in-out;
+}
+
+.animate-spin-glow {
+  animation: spinGlow 6s linear infinite;
+}
+
+.animate-spin-glow-reverse {
+  animation: spinGlowReverse 9s linear infinite;
+}
+
+.animate-float-logo {
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+.animate-sparkle-1 {
+  animation: sparklePop 2.5s ease-in-out infinite;
+}
+
+.animate-sparkle-2 {
+  animation: sparklePop 3.2s ease-in-out infinite 0.8s;
+}
+
+.animate-sparkle-3 {
+  animation: sparklePop 2.8s ease-in-out infinite 1.5s;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
 }

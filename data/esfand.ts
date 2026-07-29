@@ -1,7 +1,7 @@
 export const esfandProducts = [
   {
     id: "amjad",
-    name: "اسپند دودکن فلزی دوتکه",
+    name: "اسپند دود کن فلزی دوتکه",
     price: "1.980",
     images: [
       "/images/esfand/amjad/1.jpg",
