@@ -37,11 +37,9 @@ export default async function ProductPage({ params }: Props) {
     >
       <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16">
-
           <ProductGallery images={images} alt={product.name} />
 
           <div className="flex flex-col justify-center">
-
             <p className="text-xs tracking-[3px] uppercase text-[#D4AF37] mb-4">
               {product.category}
             </p>
@@ -98,7 +96,6 @@ export default async function ProductPage({ params }: Props) {
                 سفارش از واتساپ
               </a>
             </div>
-
           </div>
         </div>
       </div>
