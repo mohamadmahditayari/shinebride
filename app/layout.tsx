@@ -40,11 +40,10 @@ export const metadata: Metadata = {
     siteName: "ShineBride",
   },
 
-  icons: {
+icons: {
     icon: "/favicon.ico",
   },
 };
-
 export default function RootLayout({
   children,
 }: {
