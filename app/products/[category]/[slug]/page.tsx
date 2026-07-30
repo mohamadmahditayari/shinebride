@@ -5,6 +5,8 @@ import { normalizeImageArray, normalizeImageSrc } from "@/lib/image";
 import AddToCart from "@/components/AddToCart";
 import BackButton from "@/components/BackButton";
 
+export const runtime = "edge";
+
 type Props = {
   params: Promise<{ category: string; slug: string }>;
 };
