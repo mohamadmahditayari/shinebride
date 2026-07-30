@@ -1,15 +1,11 @@
-import { supabase } from "@/lib/supabase";
+import { supabaseLite } from "@/lib/supabase-lite";
 import AnimatedProductGrid from "@/components/AnimatedProductGrid";
 import BackButton from "@/components/BackButton";
 
 export const runtime = "edge";
 
 export default async function GiftPage() {
-  const { data: products } = await supabase
-    .from("products")
-    .select("*")
-    .eq("category", "gift")
-    .order("created_at", { ascending: false });
+  const products = await supabaseLite.selectAll("products", { category: "gift" }, "created_at", false);
 
   return (
     <main className="min-h-screen" style={{ background: "linear-gradient(160deg,#fffdf9 0%,#faf6ee 100%)" }}>
