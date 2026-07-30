@@ -2,7 +2,8 @@ import Image from "next/image";
 import FeaturedProducts from "@/components/products/FeaturedProducts";
 import EsfandSlider from "@/components/EsfandSlider";
 
-export const runtime = "edge";
+// ISR: revalidate every hour
+export const revalidate = 3600;
 
 export default async function Home() {
   return (

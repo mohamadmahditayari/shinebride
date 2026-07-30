@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
+import { supabaseLite } from "@/lib/supabase-lite";
 import { normalizeImageSrc } from "@/lib/image";
 
 const fallbackCategories = [
@@ -26,7 +26,7 @@ function getCategoryImage(category: any) {
 }
 
 export default async function FeaturedProducts() {
-  const { data: categories } = await supabase.from("categories").select("*").order("name");
+  const categories = await supabaseLite.selectAll("categories", {}, "name", true);
 
   const featuredCategories =
     categories && categories.length > 0

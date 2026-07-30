@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
+import { supabaseLite } from "@/lib/supabase-lite";
 import { normalizeImageSrc } from "@/lib/image";
 import BackButton from "@/components/BackButton";
 
-export const runtime = "edge";
+// ISR: revalidate every hour
+export const revalidate = 3600;
 
 export default async function ProductsPage() {
-  const { data: categories } = await supabase.from("categories").select("*").order("name");
+  const categories = await supabaseLite.selectAll("categories", {}, "name", true);
 
   const getCategoryImage = (cat: any) => {
     if (cat.image) return normalizeImageSrc(cat.image);

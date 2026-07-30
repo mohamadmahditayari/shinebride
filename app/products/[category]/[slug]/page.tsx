@@ -1,11 +1,25 @@
 import { notFound } from "next/navigation";
-import { supabase } from "@/lib/supabase";
+import { supabaseLite } from "@/lib/supabase-lite";
 import ProductGallery from "@/components/ProductGallery";
 import { normalizeImageArray, normalizeImageSrc } from "@/lib/image";
 import AddToCart from "@/components/AddToCart";
 import BackButton from "@/components/BackButton";
 
-export const runtime = "edge";
+// ISR: revalidate every hour
+export const revalidate = 3600;
+
+const knownCategories = ["esfand", "baleh", "gift", "car", "plexi", "abajour"];
+
+export async function generateStaticParams() {
+  const params: { category: string; slug: string }[] = [];
+  for (const category of knownCategories) {
+    const products = await supabaseLite.selectAll("products", { category }, "created_at", false);
+    for (const p of products) {
+      if (p.slug) params.push({ category, slug: String(p.slug) });
+    }
+  }
+  return params;
+}
 
 type Props = {
   params: Promise<{ category: string; slug: string }>;
@@ -14,14 +28,9 @@ type Props = {
 export default async function ProductPage({ params }: Props) {
   const { category, slug } = await params;
 
-  const { data: product, error } = await supabase
-    .from("products")
-    .select("*")
-    .eq("category", category)
-    .eq("slug", slug)
-    .single();
+  const product = await supabaseLite.selectOne("products", { category, slug });
 
-  if (error || !product) notFound();
+  if (!product) notFound();
 
   const images =
     Array.isArray(product.images) && product.images.length > 0

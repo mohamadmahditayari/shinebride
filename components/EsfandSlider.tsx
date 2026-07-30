@@ -1,13 +1,8 @@
-import { supabase } from "@/lib/supabase";
+import { supabaseLite } from "@/lib/supabase-lite";
 import ProductSlider from "@/components/ProductSlider";
 
 export default async function EsfandSlider() {
-  const { data: products } = await supabase
-    .from("products")
-    .select("id, name, price, cover, slug, category")
-    .eq("category", "esfand")
-    .order("created_at", { ascending: false })
-    .limit(10);
+  const products = await supabaseLite.selectAll("products", { category: "esfand" }, "created_at", false, 10);
 
   if (!products || products.length === 0) return null;
 
