@@ -5,6 +5,9 @@ import { normalizeImageArray, normalizeImageSrc } from "@/lib/image";
 import AddToCart from "@/components/AddToCart";
 import BackButton from "@/components/BackButton";
 
+// Edge runtime required by Cloudflare Pages for on-demand rendering
+export const runtime = "edge";
+
 // ISR: revalidate every hour
 export const revalidate = 3600;
 

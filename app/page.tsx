@@ -2,9 +2,6 @@ import Image from "next/image";
 import FeaturedProducts from "@/components/products/FeaturedProducts";
 import EsfandSlider from "@/components/EsfandSlider";
 
-// ISR: revalidate every hour
-export const revalidate = 3600;
-
 export default async function Home() {
   return (
     <main className="min-h-screen" style={{ background: "linear-gradient(160deg,#fffdf9 0%,#faf6ee 50%,#f5f0e8 100%)" }}>

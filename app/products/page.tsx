@@ -4,9 +4,6 @@ import { supabaseLite } from "@/lib/supabase-lite";
 import { normalizeImageSrc } from "@/lib/image";
 import BackButton from "@/components/BackButton";
 
-// ISR: revalidate every hour
-export const revalidate = 3600;
-
 export default async function ProductsPage() {
   const categories = await supabaseLite.selectAll("categories", {}, "name", true);
 

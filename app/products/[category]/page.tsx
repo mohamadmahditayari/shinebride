@@ -3,8 +3,6 @@ import AnimatedProductGrid from "@/components/AnimatedProductGrid";
 import BackButton from "@/components/BackButton";
 
 // Pre-render all known categories at build time
-export const revalidate = 3600; // ISR: revalidate every hour
-
 const categoryTitles: Record<string, string> = {
   esfand: "اسپند دود کن",
   baleh: "ست بله برون",
