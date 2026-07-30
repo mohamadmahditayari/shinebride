@@ -4,8 +4,8 @@
  * compared to the full @supabase/supabase-js library.
  */
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://placeholder.supabase.co";
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "placeholder-key";
 
 interface SupabaseRow {
   [key: string]: any;
@@ -46,16 +46,21 @@ export const supabaseLite = {
       params.limit = String(limit);
     }
 
-    const res = await fetch(buildUrl(table, params), {
-      headers: getHeaders(),
-    });
+    try {
+      const res = await fetch(buildUrl(table, params), {
+        headers: getHeaders(),
+      });
 
-    if (!res.ok) {
-      console.error(`Supabase selectAll error: ${res.status} ${res.statusText}`);
+      if (!res.ok) {
+        console.error(`Supabase selectAll error: ${res.status} ${res.statusText}`);
+        return [];
+      }
+
+      return res.json();
+    } catch (err) {
+      console.error(`Supabase selectAll fetch failed:`, err);
       return [];
     }
-
-    return res.json();
   },
 
   async selectOne(table: string, filters: Record<string, string> = {}): Promise<any | null> {
@@ -65,16 +70,21 @@ export const supabaseLite = {
       params[key] = `eq.${value}`;
     }
 
-    const res = await fetch(buildUrl(table, params), {
-      headers: getHeaders(),
-    });
+    try {
+      const res = await fetch(buildUrl(table, params), {
+        headers: getHeaders(),
+      });
 
-    if (!res.ok) {
-      console.error(`Supabase selectOne error: ${res.status} ${res.statusText}`);
+      if (!res.ok) {
+        console.error(`Supabase selectOne error: ${res.status} ${res.statusText}`);
+        return null;
+      }
+
+      const data = await res.json();
+      return Array.isArray(data) && data.length > 0 ? data[0] : null;
+    } catch (err) {
+      console.error(`Supabase selectOne fetch failed:`, err);
       return null;
     }
-
-    const data = await res.json();
-    return Array.isArray(data) && data.length > 0 ? data[0] : null;
   },
 };
