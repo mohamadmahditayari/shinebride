@@ -7,35 +7,6 @@ import BackButton from "@/components/BackButton";
 
 export const runtime = 'edge';
 
-// ISR: revalidate every hour
-export const revalidate = 3600;
-
-const knownCategories = ["esfand", "baleh", "gift", "car", "plexi", "abajour"];
-
-export async function generateStaticParams() {
-  const params: { category: string; slug: string }[] = [];
-
-  for (const category of knownCategories) {
-    const products = await supabaseLite.selectAll(
-      "products",
-      { category },
-      "created_at",
-      false
-    );
-
-    for (const p of products) {
-      if (p.slug) {
-        params.push({
-          category,
-          slug: String(p.slug),
-        });
-      }
-    }
-  }
-
-  return params;
-}
-
 type Props = {
   params: Promise<{ category: string; slug: string }>;
 };
@@ -66,11 +37,9 @@ export default async function ProductPage({ params }: Props) {
     >
       <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16">
-
           <ProductGallery images={images} alt={product.name} />
 
           <div className="flex flex-col justify-center">
-
             <p className="text-xs tracking-[3px] uppercase text-[#D4AF37] mb-4">
               {product.category}
             </p>
@@ -127,7 +96,6 @@ export default async function ProductPage({ params }: Props) {
                 سفارش از واتساپ
               </a>
             </div>
-
           </div>
         </div>
       </div>
