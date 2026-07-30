@@ -5,9 +5,6 @@ import { normalizeImageArray, normalizeImageSrc } from "@/lib/image";
 import AddToCart from "@/components/AddToCart";
 import BackButton from "@/components/BackButton";
 
-// Edge runtime required by Cloudflare Pages for on-demand rendering
-export const runtime = "edge";
-
 // ISR: revalidate every hour
 export const revalidate = 3600;
 
@@ -15,12 +12,25 @@ const knownCategories = ["esfand", "baleh", "gift", "car", "plexi", "abajour"];
 
 export async function generateStaticParams() {
   const params: { category: string; slug: string }[] = [];
+
   for (const category of knownCategories) {
-    const products = await supabaseLite.selectAll("products", { category }, "created_at", false);
+    const products = await supabaseLite.selectAll(
+      "products",
+      { category },
+      "created_at",
+      false
+    );
+
     for (const p of products) {
-      if (p.slug) params.push({ category, slug: String(p.slug) });
+      if (p.slug) {
+        params.push({
+          category,
+          slug: String(p.slug),
+        });
+      }
     }
   }
+
   return params;
 }
 
@@ -31,7 +41,10 @@ type Props = {
 export default async function ProductPage({ params }: Props) {
   const { category, slug } = await params;
 
-  const product = await supabaseLite.selectOne("products", { category, slug });
+  const product = await supabaseLite.selectOne("products", {
+    category,
+    slug,
+  });
 
   if (!product) notFound();
 
@@ -43,7 +56,12 @@ export default async function ProductPage({ params }: Props) {
       : ["/images/logo.png"];
 
   return (
-    <main className="min-h-screen" style={{ background: "linear-gradient(160deg,#fffdf9 0%,#faf6ee 100%)" }}>
+    <main
+      className="min-h-screen"
+      style={{
+        background: "linear-gradient(160deg,#fffdf9 0%,#faf6ee 100%)",
+      }}
+    >
       <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16">
 
@@ -51,10 +69,13 @@ export default async function ProductPage({ params }: Props) {
 
           <div className="flex flex-col justify-center">
 
-            {/* Breadcrumb */}
-            <p className="text-xs tracking-[3px] uppercase text-[#D4AF37] mb-4">{product.category}</p>
+            <p className="text-xs tracking-[3px] uppercase text-[#D4AF37] mb-4">
+              {product.category}
+            </p>
 
-            <h1 className="text-3xl md:text-4xl text-gray-800">{product.name}</h1>
+            <h1 className="text-3xl md:text-4xl text-gray-800">
+              {product.name}
+            </h1>
 
             <div className="flex items-center gap-3 mt-5">
               <div className="h-px w-8 bg-[#D4AF37]" />
@@ -62,7 +83,10 @@ export default async function ProductPage({ params }: Props) {
             </div>
 
             <p className="text-2xl md:text-3xl text-[#D4AF37] font-bold mt-5">
-              {product.price} <span className="text-base font-normal text-gray-400">تومان</span>
+              {product.price}
+              <span className="text-base font-normal text-gray-400">
+                {" "}تومان
+              </span>
             </p>
 
             {product.description && (
@@ -71,14 +95,16 @@ export default async function ProductPage({ params }: Props) {
               </p>
             )}
 
-            <AddToCart product={{
-              id: product.id,
-              name: product.name,
-              price: product.price,
-              cover: images[0],
-              category: product.category,
-              slug: product.slug,
-            }} />
+            <AddToCart
+              product={{
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                cover: images[0],
+                category: product.category,
+                slug: product.slug,
+              }}
+            />
 
             <div className="flex flex-col sm:flex-row gap-3 mt-3">
               <a
@@ -89,6 +115,7 @@ export default async function ProductPage({ params }: Props) {
               >
                 سفارش از اینستاگرام
               </a>
+
               <a
                 href="https://wa.me/989011322245"
                 target="_blank"
@@ -102,6 +129,7 @@ export default async function ProductPage({ params }: Props) {
           </div>
         </div>
       </div>
+
       <BackButton />
     </main>
   );
