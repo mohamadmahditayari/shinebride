@@ -1,0 +1,505 @@
+{
+  "session": {
+    "id": "goy1ip",
+    "started": "2026-07-30T00:42:28.792Z"
+  },
+  "contributions": [
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:12:35.098Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:12:38.440Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "Viewed: app/layout.tsx",
+      "files": [
+        "app/layout.tsx"
+      ],
+      "timestamp": "2026-07-30T14:12:40.557Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/server/app/products/plexi/page.js",
+      "files": [
+        ".next/dev/server/app/products/plexi/page.js"
+      ],
+      "timestamp": "2026-07-30T14:12:41.719Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .refact/buddy/state.json",
+      "files": [
+        ".refact/buddy/state.json"
+      ],
+      "timestamp": "2026-07-30T14:12:43.393Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/types/validator.ts",
+      "files": [
+        ".next/dev/types/validator.ts"
+      ],
+      "timestamp": "2026-07-30T14:12:47.918Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/00009933.sst",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/00009933.sst"
+      ],
+      "timestamp": "2026-07-30T14:12:52.772Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/00009936.sst",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/00009936.sst"
+      ],
+      "timestamp": "2026-07-30T14:12:56.205Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:13:06.430Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:13:07.460Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/server/chunks/ssr/[root-of-the-server]__1x5vdx3._.js.map",
+      "files": [
+        ".next/dev/server/chunks/ssr/[root-of-the-server]__1x5vdx3._.js.map"
+      ],
+      "timestamp": "2026-07-30T14:13:11.287Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .refact/buddy/state.json",
+      "files": [
+        ".refact/buddy/state.json"
+      ],
+      "timestamp": "2026-07-30T14:13:13.608Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/00009956.sst",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/00009956.sst"
+      ],
+      "timestamp": "2026-07-30T14:13:18.517Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .refact/buddy/state.json",
+      "files": [
+        ".refact/buddy/state.json"
+      ],
+      "timestamp": "2026-07-30T14:13:28.745Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:13:33.436Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:13:36.723Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:13:40.021Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .refact/buddy/state.json",
+      "files": [
+        ".refact/buddy/state.json"
+      ],
+      "timestamp": "2026-07-30T14:13:43.819Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:13:47.101Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:13:50.416Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:13:53.702Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File deleted: .next/dev/cache/turbopack/v16.2.10/00010027.meta",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/00010027.meta"
+      ],
+      "timestamp": "2026-07-30T14:13:57.799Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .refact/buddy/state.json",
+      "files": [
+        ".refact/buddy/state.json"
+      ],
+      "timestamp": "2026-07-30T14:13:59.000Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:02.271Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:05.537Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:08.825Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:12.135Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .refact/buddy/state.json",
+      "files": [
+        ".refact/buddy/state.json"
+      ],
+      "timestamp": "2026-07-30T14:14:14.192Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:17.458Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:21.148Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:24.432Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:27.697Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .refact/buddy/state.json",
+      "files": [
+        ".refact/buddy/state.json"
+      ],
+      "timestamp": "2026-07-30T14:14:29.390Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:32.838Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .refact/buddy/memory_ops.jsonl",
+      "files": [
+        ".refact/buddy/memory_ops.jsonl"
+      ],
+      "timestamp": "2026-07-30T14:14:36.287Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:39.577Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:42.879Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .refact/buddy/state.json",
+      "files": [
+        ".refact/buddy/state.json"
+      ],
+      "timestamp": "2026-07-30T14:14:45.339Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:48.632Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:52.121Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:55.386Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:14:58.684Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .refact/buddy/state.json",
+      "files": [
+        ".refact/buddy/state.json"
+      ],
+      "timestamp": "2026-07-30T14:15:00.518Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:15:03.796Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:15:07.056Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:15:10.320Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:15:13.595Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .refact/buddy/state.json",
+      "files": [
+        ".refact/buddy/state.json"
+      ],
+      "timestamp": "2026-07-30T14:15:15.702Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:15:18.978Z"
+    },
+    {
+      "type": "contribution",
+      "agent": "antigravity",
+      "action": "File modified: .next/dev/cache/turbopack/v16.2.10/LOG",
+      "files": [
+        ".next/dev/cache/turbopack/v16.2.10/LOG"
+      ],
+      "timestamp": "2026-07-30T14:15:22.255Z"
+    }
+  ],
+  "handoffs": [],
+  "plans": [],
+  "agentIntents": {
+    "antigravity": {
+      "status": "idle",
+      "intent": "Waiting for task",
+      "lastUpdate": "2026-07-30T00:42:28.792Z"
+    },
+    "gemini": {
+      "status": "idle",
+      "intent": "Ready",
+      "lastUpdate": "2026-07-30T00:42:28.792Z"
+    }
+  },
+  "activeFiles": [],
+  "relatedFiles": [],
+  "gitStatus": {
+    "branch": "main",
+    "staged": [],
+    "modified": [
+      "app/cart/page.fsx",
+      "app/components/Footer.tsx",
+      "app/components/navbar.tsx",
+      "app/products/esfand/[id]/page.tsx",
+      "components/prodducts/FeaturedProducts.tsx",
+      "lib/supabase.ts",
+      ".agent/ABOUT.md",
+      ".agent/workflows/README.md",
+      ".agent/workflows/antigravity.md",
+      ".agent/workflows/gemini.md",
+      ".conduit/context.json",
+      ".conduit/history.json",
+      ".conduit/learnings.json",
+      ".conduit/memory.json",
+      ".refact/buddy/main_prompt.md",
+      ".refact/buddy/memory_ops.jsonl",
+      ".refact/buddy/runtime_queue.jsonl",
+      ".refact/buddy/settings.json",
+      ".refact/buddy/state.json",
+      ".refact/tasks/index.json",
+      "agent_bridge.js"
+    ],
+    "untracked": [],
+    "hasChanges": true
+  },
+  "lastSync": "2026-07-30T14:15:22.255Z",
+  "reservedFiles": {}
+}
