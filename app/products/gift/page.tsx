@@ -2,6 +2,8 @@ import { supabase } from "@/lib/supabase";
 import AnimatedProductGrid from "@/components/AnimatedProductGrid";
 import BackButton from "@/components/BackButton";
 
+export const runtime = "edge";
+
 export default async function GiftPage() {
   const { data: products } = await supabase
     .from("products")

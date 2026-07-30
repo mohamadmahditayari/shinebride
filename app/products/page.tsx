@@ -4,6 +4,8 @@ import { supabase } from "@/lib/supabase";
 import { normalizeImageSrc } from "@/lib/image";
 import BackButton from "@/components/BackButton";
 
+export const runtime = "edge";
+
 export default async function ProductsPage() {
   const { data: categories } = await supabase.from("categories").select("*").order("name");
 
