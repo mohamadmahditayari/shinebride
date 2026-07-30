@@ -2,6 +2,8 @@ import { supabaseLite } from "@/lib/supabase-lite";
 import AnimatedProductGrid from "@/components/AnimatedProductGrid";
 import BackButton from "@/components/BackButton";
 
+export const runtime = 'edge';
+
 // Pre-render all known categories at build time
 const categoryTitles: Record<string, string> = {
   esfand: "اسپند دود کن",
