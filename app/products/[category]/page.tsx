@@ -1,6 +1,38 @@
-import { supabaseLite } from "@/lib/supabase-lite";
 import AnimatedProductGrid from "@/components/AnimatedProductGrid";
 import BackButton from "@/components/BackButton";
+
+export const dynamic = "force-static";
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return ["esfand", "baleh", "gift", "car", "plexi", "abajour"].map((category) => ({ category }));
+}
+
+const localProductsByCategory: Record<string, Array<any>> = {
+  esfand: [
+    { id: 1, name: "اسپند دود کن اقتصادی", price: "1.550", cover: "/images/esfand/esfand.jpg", slug: "em", description: "اسپند دود کن کلاسیک با طراحی شیک و مناسب برای هدیه" },
+    { id: 2, name: "ست وی‌ای‌پی ترک", price: "5.580", cover: "/images/esfand/esfand.jpg", slug: "vip", description: "ست لوکس و خاص برای مراسم و انتخاب‌های ویژه" },
+    { id: 3, name: "ست استیل دو تکه", price: "1.980", cover: "/images/esfand/esfand.jpg", slug: "amjad", description: "طرح ساده و شیک برای استفاده روزمره" },
+  ],
+  baleh: [
+    { id: 4, name: "ست بله برون کلاسیک", price: "3.200", cover: "/images/baleh/baleh.jpg", slug: "baleh-classic", description: "تکمیل کننده‌ی زیبایی و هویت خاص" },
+  ],
+  gift: [
+    { id: 5, name: "گیفت دسته‌دار", price: "1.250", cover: "/images/gift/gift.jpg", slug: "daste", description: "پک هدیه با طراحی خاص و مناسب برای مناسبت‌ها" },
+    { id: 6, name: "گیفت موتور", price: "2.100", cover: "/images/gift/gift.jpg", slug: "motor", description: "هدیه ویژه با جزئیات ظریف" },
+    { id: 7, name: "گیفت شاخی", price: "1.800", cover: "/images/gift/gift.jpg", slug: "shakhe", description: "تنوع بالا و طراحی امروزی" },
+    { id: 8, name: "گیفت مینی", price: "950", cover: "/images/gift/gift.jpg", slug: "mini", description: "نسخه‌ی فشرده و جذاب برای هدیه‌های کوچک" },
+  ],
+  car: [
+    { id: 9, name: "گیفت ماشین", price: "1.500", cover: "/images/car/car.jpg", slug: "car-gift", description: "هدیه‌ی مناسب برای ماشین و سفر" },
+  ],
+  plexi: [
+    { id: 10, name: "پلکسی لوکس", price: "2.700", cover: "/images/plexi/plexi.jpg", slug: "plexi-lux", description: "پارچه و طراحی شاخص برای دکور و مناسبت" },
+  ],
+  abajour: [
+    { id: 11, name: "آباژور خاص", price: "3.600", cover: "/images/abajour/abajour.jpg", slug: "abajour-lux", description: "آباژور شیک و خاص برای فضاهای خاص" },
+  ],
+};
 
 const categoryTitles: Record<string, string> = {
   esfand: "اسپند دود کن",
@@ -18,7 +50,7 @@ type Props = {
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params;
 
-  const products = await supabaseLite.selectAll("products", { category }, "created_at", false);
+  const products = localProductsByCategory[category] || [];
 
   const title = categoryTitles[category] || category;
 
