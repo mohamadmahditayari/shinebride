@@ -1,23 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
-import { supabaseLite } from "@/lib/supabase-lite";
 import { normalizeImageSrc } from "@/lib/image";
 import BackButton from "@/components/BackButton";
 
+const fallbackCategories = [
+  { id: 1, name: "اسپند دود کن", slug: "esfand", image: "/images/esfand/esfand.jpg" },
+  { id: 2, name: "ست بله برون", slug: "baleh", image: "/images/baleh/baleh.jpg" },
+  { id: 3, name: "گیفت", slug: "gift", image: "/images/gift/gift.jpg" },
+  { id: 4, name: "گیفت ماشین", slug: "car", image: "/images/car/car.jpg" },
+  { id: 5, name: "پلکسی", slug: "plexi", image: "/images/plexi/plexi.jpg" },
+  { id: 6, name: "آباژور", slug: "abajour", image: "/images/abajour/abajour.jpg" },
+];
+
 export default async function ProductsPage() {
-  const categories = await supabaseLite.selectAll("categories", {}, "name", true);
+  const categories = fallbackCategories;
 
-  const getCategoryImage = (cat: any) => {
-    if (cat.image) return normalizeImageSrc(cat.image);
-    const slug = String(cat.slug || cat.link || cat.name || "").trim().toLowerCase();
-    return slug ? normalizeImageSrc(`/images/${slug}/${slug}.jpg`) : "/images/logo.png";
-  };
+  const getCategoryImage = (cat: any) => normalizeImageSrc(cat.image || `/images/${cat.slug}/${cat.slug}.jpg`);
 
-  const getCategoryName = (cat: any) => {
-    const rawName = String(cat.name || "").replace(/\s+/g, " ").trim();
-    if (String(cat.slug || cat.link || "").trim() === "esfand" || rawName.startsWith("اسفند")) return "اسپند دود کن";
-    return rawName || "دستهبندی";
-  };
+  const getCategoryName = (cat: any) => cat.name || "دستهبندی";
 
   return (
     <main className="min-h-screen" style={{ background: "linear-gradient(160deg,#fffdf9 0%,#faf6ee 60%,#f5f0e8 100%)" }}>
@@ -38,7 +38,7 @@ export default async function ProductsPage() {
       {/* Grid */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 pb-24">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {categories?.map((cat) => (
+          {categories.map((cat) => (
             <Link
               key={cat.id}
               href={`/products/${String(cat.link || cat.slug || cat.name || "").trim()}`}

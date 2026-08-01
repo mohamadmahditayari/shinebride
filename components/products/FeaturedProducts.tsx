@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { supabaseLite } from "@/lib/supabase-lite";
 import { normalizeImageSrc } from "@/lib/image";
 
 const fallbackCategories = [
@@ -26,16 +25,7 @@ function getCategoryImage(category: any) {
 }
 
 export default async function FeaturedProducts() {
-  const categories = await supabaseLite.selectAll("categories", {}, "name", true);
-
-  const featuredCategories =
-    categories && categories.length > 0
-      ? categories.map((c) => ({
-          name: getFeaturedCategoryName(c),
-          image: getCategoryImage(c),
-          slug: String(c.slug || c.link || c.name || "").trim(),
-        }))
-      : fallbackCategories;
+  const featuredCategories = fallbackCategories;
 
   return (
     <section className="max-w-7xl mx-auto px-4 md:px-8 pb-20 md:pb-32">

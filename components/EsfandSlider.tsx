@@ -1,15 +1,16 @@
-import { supabaseLite } from "@/lib/supabase-lite";
 import ProductSlider from "@/components/ProductSlider";
 
+const fallbackProducts = [
+  { id: 1, name: "اسپند دود کن اقتصادی", price: "1.550", cover: "/images/esfand/esfand.jpg", slug: "em", category: "esfand" },
+  { id: 2, name: "ست وی‌ای‌پی ترک", price: "5.580", cover: "/images/esfand/esfand.jpg", slug: "vip", category: "esfand" },
+  { id: 3, name: "ست استیل دو تکه", price: "1.980", cover: "/images/esfand/esfand.jpg", slug: "amjad", category: "esfand" },
+];
+
 export default async function EsfandSlider() {
-  const products = await supabaseLite.selectAll("products", { category: "esfand" }, "created_at", false, 10);
-
-  if (!products || products.length === 0) return null;
-
   return (
     <ProductSlider
       title="اسپند دود کن"
-      products={products}
+      products={fallbackProducts}
       categorySlug="esfand"
     />
   );
