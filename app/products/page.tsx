@@ -41,7 +41,7 @@ export default async function ProductsPage() {
           {categories.map((cat) => (
             <Link
               key={cat.id}
-              href={`/products/${String(cat.link || cat.slug || cat.name || "").trim()}`}
+              href={`/products/${String(cat.slug || cat.name || "").trim()}`}
               className="group relative overflow-hidden rounded-2xl md:rounded-3xl bg-white shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
             >
               <div className="relative w-full aspect-square md:aspect-[3/4] overflow-hidden">
