@@ -82,6 +82,7 @@ export default function AdminPage() {
       setCategories(data || []);
     } catch (error) {
       console.error(error);
+      setCategories([]);
       setStatus({ type: "error", message: "خطا در بارگیری دستهبندیها رخ داد." });
     }
   }
@@ -97,6 +98,7 @@ export default function AdminPage() {
       setProducts(data || []);
     } catch (error) {
       console.error(error);
+      setProducts([]);
       setStatus({ type: "error", message: "خطا در بارگیری محصولات رخ داد." });
     }
   }
