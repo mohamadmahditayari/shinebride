@@ -1,0 +1,4 @@
+/products/* /index.html 200
+/products/:category/:slug /index.html 200
+/products/:category /index.html 200
+/* /index.html 200
