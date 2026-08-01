@@ -2,8 +2,6 @@ import { supabaseLite } from "@/lib/supabase-lite";
 import AnimatedProductGrid from "@/components/AnimatedProductGrid";
 import BackButton from "@/components/BackButton";
 
-export const runtime = 'edge';
-
 const categoryTitles: Record<string, string> = {
   esfand: "اسپند دود کن",
   baleh: "ست بله برون",

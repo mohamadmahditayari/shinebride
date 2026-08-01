@@ -15,7 +15,15 @@ export function normalizeImageSrc(value: unknown, fallback = "/images/logo.png")
     return imagePath;
   }
 
+  if (imagePath.startsWith("/images/")) {
+    return imagePath;
+  }
+
   imagePath = imagePath.replace(/^public\//i, "");
+
+  if (imagePath.startsWith("images/")) {
+    return `/${imagePath}`;
+  }
 
   if (!imagePath.startsWith("/")) {
     imagePath = `/${imagePath}`;
