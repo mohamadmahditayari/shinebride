@@ -1,4 +1,4 @@
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import FeaturedProducts from "@/components/products/FeaturedProducts";
 import EsfandSlider from "@/components/EsfandSlider";
 
@@ -30,7 +30,7 @@ export default async function Home() {
             {/* Main logo frame */}
             <div className="relative rounded-full p-[3px] bg-gradient-to-tr from-[#D4AF37] via-[#FFF8DC] via-[#F3E5AB] to-[#B8860B] shadow-2xl shadow-[#D4AF37]/40 transition-transform duration-500 group-hover:scale-105">
               <div className="relative overflow-hidden rounded-full bg-white p-1">
-                <Image
+                <OptimizedImage
                   src="/images/logo.png"
                   alt="ShineBride"
                   width={110}

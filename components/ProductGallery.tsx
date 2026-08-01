@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { normalizeImageSrc } from "@/lib/image";
+import OptimizedImage from "@/components/OptimizedImage";
 
 type Props = {
   images: string[];
@@ -15,7 +15,7 @@ export default function ProductGallery({ images, alt }: Props) {
 
   return (
     <div>
-      <Image
+      <OptimizedImage
         src={normalizedImages[selectedImage]}
         alt={alt}
         width={700}
@@ -36,7 +36,7 @@ export default function ProductGallery({ images, alt }: Props) {
                   : "border-transparent"
               }`}
             >
-              <Image
+              <OptimizedImage
                 src={img}
                 alt={`${alt}-${index}`}
                 width={180}

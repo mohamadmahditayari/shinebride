@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import OptimizedImage from "@/components/OptimizedImage";
 import { useRef } from "react";
 import { normalizeImageSrc } from "@/lib/image";
 
@@ -73,7 +73,7 @@ export default function ProductSlider({ title, products, categorySlug }: Props) 
             className="group shrink-0 w-44 md:w-56 overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
           >
             <div className="relative w-full aspect-[3/4] overflow-hidden">
-              <Image
+              <OptimizedImage
                 src={normalizeImageSrc(item.cover || "/images/logo.png")}
                 alt={item.name}
                 fill

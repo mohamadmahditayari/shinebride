@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { normalizeImageSrc } from "@/lib/image";
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 
 type Result = {
   id: string | number;
@@ -95,7 +95,7 @@ export default function SearchBar() {
                   className="w-full flex items-center gap-3 px-4 py-3 hover:bg-[#D4AF37]/5 transition text-right border-b border-gray-50 last:border-0"
                 >
                   <div className="relative h-10 w-10 rounded-xl overflow-hidden shrink-0 bg-gray-100">
-                    <Image
+                    <OptimizedImage
                       src={normalizeImageSrc(item.cover || "/images/logo.png")}
                       alt={item.name}
                       fill

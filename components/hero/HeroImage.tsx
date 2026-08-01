@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function HeroImage() {
   return (
@@ -25,7 +25,7 @@ export default function HeroImage() {
         }}
         className="relative rounded-[40px] bg-white/20 backdrop-blur-2xl border border-white/30 shadow-2xl p-6"
       >
-        <Image
+        <OptimizedImage
           src="/images/hero.png"
           alt="ShineBride"
           width={520}
