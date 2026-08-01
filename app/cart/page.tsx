@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/app/context/CartContext";
 import { normalizeImageSrc } from "@/lib/image";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function CartPage() {
   const { cart, removeFromCart, updateQty, clearCart, totalItems, totalPrice } = useCart();
@@ -48,7 +48,7 @@ export default function CartPage() {
             {cart.map((item) => (
               <div key={item.id} className="flex gap-4 bg-white rounded-2xl p-4 shadow-sm border border-gray-50">
                 <div className="relative h-20 w-20 rounded-xl overflow-hidden shrink-0 bg-gray-100">
-                  <Image
+                  <OptimizedImage
                     src={normalizeImageSrc(item.cover || "/images/logo.png")}
                     alt={item.name}
                     fill

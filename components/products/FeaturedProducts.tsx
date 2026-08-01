@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { normalizeImageSrc } from "@/lib/image";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const fallbackCategories = [
   { name: "اسپند دود کن", image: "/images/esfand/esfand.jpg", slug: "esfand" },
@@ -50,7 +50,7 @@ export default async function FeaturedProducts() {
           >
             {/* Image */}
             <div className="relative w-full aspect-square md:aspect-[3/4] overflow-hidden">
-              <Image
+              <OptimizedImage
                 src={normalizeImageSrc(item.image || "/images/logo.png")}
                 alt={item.name}
                 fill
