@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pages:build": "opennextjs-cloudflare build"
+    "pages:build": "next build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.2",
