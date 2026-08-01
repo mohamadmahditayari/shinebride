@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { normalizeImageSrc } from "@/lib/image";
 import BackButton from "@/components/BackButton";
@@ -45,11 +44,10 @@ export default async function ProductsPage() {
               className="group relative overflow-hidden rounded-2xl md:rounded-3xl bg-white shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
             >
               <div className="relative w-full aspect-square md:aspect-[3/4] overflow-hidden">
-                <Image
+                <img
                   src={getCategoryImage(cat)}
                   alt={cat.name}
-                  fill
-                  className="object-cover transition duration-700 group-hover:scale-110"
+                  className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
 

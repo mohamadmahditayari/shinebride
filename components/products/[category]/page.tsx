@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { normalizeImageSrc } from "@/lib/image";
@@ -61,11 +60,10 @@ export default async function CategoryPage({ params }: Props) {
           >
 
             <div className="relative w-full overflow-hidden rounded-t-3xl aspect-[9/16]">
-              <Image
+              <img
                 src={normalizeImageSrc(item.cover || "/images/logo.png")}
                 alt={item.name}
-                fill
-                className="object-cover group-hover:scale-105 transition duration-500"
+                className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition duration-500"
               />
             </div>
 
