@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pages:build": "opennextjs-cloudflare build"
+    "pages:build": "opennextjs-cloudflare build",
+    "deploy:pages": "npm run pages:build && npx wrangler pages deploy .open-next/assets --project-name=shinebride --commit-dirty=true"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.2",
