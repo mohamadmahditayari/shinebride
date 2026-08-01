@@ -6,7 +6,7 @@ type Props = ImgHTMLAttributes<HTMLImageElement> & {
   priority?: boolean;
 };
 
-function buildImageSrc(src: string | undefined) {
+function buildImageSrc(src: string | Blob | undefined) {
   if (!src) return "/images/logo.png?v=shinebride-20260801";
 
   const fallback = "/images/logo.png?v=shinebride-20260801";
