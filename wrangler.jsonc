@@ -1,15 +1,5 @@
 {
   "name": "shinebride",
-  "main": ".open-next/worker.js",
   "compatibility_date": "2026-07-30",
-  "compatibility_flags": ["nodejs_compat"],
-  "assets": {
-    "directory": ".open-next/assets",
-    "binding": "ASSETS"
-  },
-  "vars": {
-    "NEXT_PUBLIC_SUPABASE_URL": "https://btxhaeslqhxcorvgicyl.supabase.co",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_pECz6hGQ_znXoAHs-mAtZA_5Oh668QZ",
-    "NEXT_PUBLIC_SUPABASE_STORAGE_BUCKET": "product-images"
-  }
+  "compatibility_flags": ["nodejs_compat"]
 }
