@@ -13,7 +13,19 @@ function getCategoryImage(category: any) {
   if (category.image) return normalizeImageSrc(category.image);
   const slug = String(category.slug || category.link || category.name || "").trim().toLowerCase();
   if (!slug) return normalizeImageSrc("/images/logo.png");
-  return normalizeImageSrc(`/images/${slug}/${slug}.jpg`);
+  
+  // Known category images - direct mapping for reliability
+  const categoryImages: Record<string, string> = {
+    esfand: "/images/esfand/esfand.jpg",
+    baleh: "/images/baleh/baleh.jpg",
+    gift: "/images/gift/gift.jpg",
+    car: "/images/car/car.jpg",
+    plexi: "/images/plexi/plexi.jpg",
+    abajour: "/images/abajour/abajour.jpg",
+  };
+  
+  // Return known image path or fallback
+  return normalizeImageSrc(categoryImages[slug] || `/images/${slug}/${slug}.jpg`);
 }
 
 export default async function FeaturedProducts() {
