@@ -1,9 +1,0 @@
-name = "shinebride"
-pages_build_output_dir = ".open-next/assets"
-compatibility_date = "2026-07-30"
-compatibility_flags = ["nodejs_compat"]
-
-[vars]
-NEXT_PUBLIC_SUPABASE_URL = "https://btxhaeslqhxcorvgicyl.supabase.co"
-NEXT_PUBLIC_SUPABASE_ANON_KEY = "sb_publishable_pECz6hGQ_znXoAHs-mAtZA_5Oh668QZ"
-NEXT_PUBLIC_SUPABASE_STORAGE_BUCKET = "product-images"
