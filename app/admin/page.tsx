@@ -81,7 +81,6 @@ export default function AdminPage() {
       if (error) throw error;
       setCategories(data || []);
     } catch (error) {
-      console.error(error);
       setCategories([]);
       setStatus({ type: "error", message: "خطا در بارگیری دستهبندیها رخ داد." });
     }
@@ -97,7 +96,6 @@ export default function AdminPage() {
       if (error) throw error;
       setProducts(data || []);
     } catch (error) {
-      console.error(error);
       setProducts([]);
       setStatus({ type: "error", message: "خطا در بارگیری محصولات رخ داد." });
     }
@@ -247,7 +245,6 @@ export default function AdminPage() {
       resetForm();
       await getProducts();
     } catch (error) {
-      console.error(error);
       setStatus({ type: "error", message: (error as Error).message || "خطا در ذخیره محصول." });
     } finally {
       setSaving(false);
@@ -265,7 +262,6 @@ export default function AdminPage() {
       setStatus({ type: "success", message: "محصول حذف شد." });
       await getProducts();
     } catch (error) {
-      console.error("deleteProduct error", error);
       setStatus({ type: "error", message: (error as Error).message || "خطا در حذف محصول." });
     }
   }
@@ -357,7 +353,6 @@ export default function AdminPage() {
       await getCategories();
       resetCategoryForm();
     } catch (error) {
-      console.error("saveCategory error", error);
       setStatus({ type: "error", message: (error as Error).message || "خطا در ذخیره دستهبندی." });
     } finally {
       setCatSaving(false);
@@ -374,7 +369,6 @@ export default function AdminPage() {
       setStatus({ type: "success", message: "دستهبندی حذف شد." });
       await getCategories();
     } catch (error) {
-      console.error("deleteCategory error", error);
       setStatus({ type: "error", message: (error as Error).message || "خطا در حذف دستهبندی." });
     }
   }

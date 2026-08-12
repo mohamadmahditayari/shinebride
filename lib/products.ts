@@ -64,7 +64,7 @@ export async function getCategories() {
     // Otherwise use fallback
     return fallbackCategories;
   } catch (error) {
-    console.error("Error fetching categories:", error);
+    // Silently fallback to local data if Supabase fails
     return fallbackCategories;
   }
 }
@@ -87,7 +87,7 @@ export async function getAllProducts() {
     // Otherwise use fallback
     return fallbackProducts;
   } catch (error) {
-    console.error("Error fetching products:", error);
+    // Silently fallback to local data if Supabase fails
     return fallbackProducts;
   }
 }
@@ -111,7 +111,7 @@ export async function getProductsByCategory(category: string) {
     // Otherwise use fallback
     return fallbackProductsByCategory[category] || [];
   } catch (error) {
-    console.error(`Error fetching products for category ${category}:`, error);
+    // Silently fallback to local data if Supabase fails
     return fallbackProductsByCategory[category] || [];
   }
 }
@@ -136,7 +136,7 @@ export async function getProductBySlug(category: string, slug: string) {
     // Otherwise use fallback - find in all fallback products
     return fallbackProducts.find(p => p.category === category && p.slug === slug) || null;
   } catch (error) {
-    console.error(`Error fetching product ${slug} in category ${category}:`, error);
+    // Silently fallback to local data if Supabase fails
     return fallbackProducts.find(p => p.category === category && p.slug === slug) || null;
   }
 }
