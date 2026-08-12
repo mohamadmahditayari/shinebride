@@ -1,18 +1,10 @@
 import Link from "next/link";
 import { normalizeImageSrc } from "@/lib/image";
 import BackButton from "@/components/BackButton";
-
-const fallbackCategories = [
-  { id: 1, name: "اسپند دود کن", slug: "esfand", image: "/images/esfand/esfand.jpg" },
-  { id: 2, name: "ست بله برون", slug: "baleh", image: "/images/baleh/baleh.jpg" },
-  { id: 3, name: "گیفت", slug: "gift", image: "/images/gift/gift.jpg" },
-  { id: 4, name: "گیفت ماشین", slug: "car", image: "/images/car/car.jpg" },
-  { id: 5, name: "پلکسی", slug: "plexi", image: "/images/plexi/plexi.jpg" },
-  { id: 6, name: "آباژور", slug: "abajour", image: "/images/abajour/abajour.jpg" },
-];
+import { getCategories, fallbackCategories } from "@/lib/products";
 
 export default async function ProductsPage() {
-  const categories = fallbackCategories;
+  const categories = await getCategories();
 
   const getCategoryImage = (cat: any) => normalizeImageSrc(cat.image || `/images/${cat.slug}/${cat.slug}.jpg`);
 

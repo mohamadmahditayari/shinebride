@@ -1,15 +1,7 @@
 import Link from "next/link";
 import { normalizeImageSrc } from "@/lib/image";
 import OptimizedImage from "@/components/OptimizedImage";
-
-const fallbackCategories = [
-  { name: "اسپند دود کن", image: "/images/esfand/esfand.jpg", slug: "esfand" },
-  { name: "ست بله برون", image: "/images/baleh/baleh.jpg", slug: "baleh" },
-  { name: "گیفت", image: "/images/gift/gift.jpg", slug: "gift" },
-  { name: "گیفت ماشین", image: "/images/car/car.jpg", slug: "car" },
-  { name: "پلکسی", image: "/images/plexi/plexi.jpg", slug: "plexi" },
-  { name: "آباژور", image: "/images/abajour/abajour.jpg", slug: "abajour" },
-];
+import { getCategories, fallbackCategories } from "@/lib/products";
 
 function getFeaturedCategoryName(category: any) {
   const rawName = String(category.name || "").trim();
@@ -25,7 +17,7 @@ function getCategoryImage(category: any) {
 }
 
 export default async function FeaturedProducts() {
-  const featuredCategories = fallbackCategories;
+  const featuredCategories = await getCategories();
 
   return (
     <section className="max-w-7xl mx-auto px-4 md:px-8 pb-20 md:pb-32">
