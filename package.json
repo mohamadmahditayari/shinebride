@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "opennextjs-cloudflare build && mkdir -p .open-next/assets && cp -r public/. .open-next/assets/",
+    "build": "opennextjs-cloudflare build",
     "start": "next start",
     "lint": "eslint",
     "pages:build": "npm run build",
