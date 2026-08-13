@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "opennextjs-cloudflare build && mkdir -p .open-next/assets && cp -r public/. .open-next/assets/",
     "start": "next start",
     "lint": "eslint",
-    "pages:build": "opennextjs-cloudflare build && mkdir -p .open-next/assets && cp -r public/. .open-next/assets/",
+    "pages:build": "npm run build",
     "deploy:pages": "npm run pages:build && npx wrangler pages deploy .open-next/assets --project-name=shinebride --commit-dirty=true"
   },
   "dependencies": {
