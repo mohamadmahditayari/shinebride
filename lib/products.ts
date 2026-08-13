@@ -79,9 +79,9 @@ export async function getAllProducts() {
 
     if (error) throw error;
     
-    // If Supabase returns data, use it
+    // If Supabase returns data, use it with normalization
     if (data && data.length > 0) {
-      return data;
+      return data.map(normalizeProduct);
     }
     
     // Otherwise use fallback
@@ -90,6 +90,100 @@ export async function getAllProducts() {
     // Silently fallback to local data if Supabase fails
     return fallbackProducts;
   }
+}
+
+// Helper function to get default cover for a product based on category and slug
+function getDefaultProductCover(category: string, slug: string): string {
+  const categoryCovers: Record<string, Record<string, string>> = {
+    esfand: {
+      em: "/images/esfand/em/1.jpg",
+      vip: "/images/esfand/vip/1.jpg",
+      amjad: "/images/esfand/amjad/1.jpg",
+      aroos: "/images/esfand/aroos/1.jpg",
+      almas: "/images/esfand/almas/1.jpg",
+      fm: "/images/esfand/fm/1.jpg",
+      javaher: "/images/esfand/javaher/1.jpg",
+      km: "/images/esfand/km/1.jpg",
+      ros: "/images/esfand/ros/1.jpg",
+      setk: "/images/esfand/setk/1.jpg",
+      settalaii: "/images/esfand/settalaii/1.jpg",
+    },
+    baleh: {
+      dantel: "/images/baleh/dantel/1.jpg",
+      darbay: "/images/baleh/darbay/1.jpg",
+      eqtesadi: "/images/baleh/eqtesadi/1.jpg",
+      harir: "/images/baleh/harir/1.jpg",
+      javaher: "/images/baleh/javaher/1.jpg",
+      orkideh: "/images/baleh/orkideh/1.jpg",
+      otrishi: "/images/baleh/otrishi/1.jpg",
+      papyon: "/images/baleh/papyon/1.jpg",
+      par: "/images/baleh/par/1.jpg",
+      parvane: "/images/baleh/parvane/1.jpg",
+      pelise: "/images/baleh/pelise/1.jpg",
+      pinky: "/images/baleh/pinky/1.jpg",
+      qoo: "/images/baleh/qoo/1.jpg",
+      roosi: "/images/baleh/roosi/1.jpg",
+      ros: "/images/baleh/ros/1.jpg",
+      ros2: "/images/baleh/ros2/1.jpg",
+      "set-golbehi": "/images/baleh/set-golbehi/1.jpg",
+    },
+    gift: {
+      alaleh: "/images/gift/alaleh/1.jpg",
+      atr: "/images/gift/atr/1.jpg",
+      bad: "/images/gift/bad/1.jpg",
+      daste: "/images/gift/daste/1.jpeg",
+      gharch: "/images/gift/gharch/1.jpg",
+      kandel: "/images/gift/kandel/1.jpeg",
+      mini: "/images/gift/mini/1.jpg",
+      motor: "/images/gift/motor/1.jpeg",
+      rubik: "/images/gift/rubik/1.jpg",
+      sadaf: "/images/gift/sadaf/1.jpg",
+      shakhe: "/images/gift/shakhe/1.jpeg",
+    },
+    car: {
+      "car-gift": "/images/car/car.jpg",
+    },
+    plexi: {
+      "plexi-lux": "/images/plexi/plexi.jpg",
+    },
+    abajour: {
+      "abajour-lux": "/images/abajour/abajour.jpg",
+    },
+  };
+  
+  const categoryData = categoryCovers[category];
+  if (categoryData && categoryData[slug]) {
+    return categoryData[slug];
+  }
+  
+  // Default category images
+  const categoryDefaults: Record<string, string> = {
+    esfand: "/images/esfand/esfand.jpg",
+    baleh: "/images/baleh/baleh.jpg",
+    gift: "/images/gift/gift.jpg",
+    car: "/images/car/car.jpg",
+    plexi: "/images/plexi/plexi.jpg",
+    abajour: "/images/abajour/abajour.jpg",
+  };
+  
+  return categoryDefaults[category] || "/images/logo.png";
+}
+
+// Normalize product data to ensure valid cover and images
+function normalizeProduct(product: any): any {
+  const normalized = { ...product };
+  
+  // Ensure cover is valid
+  if (!normalized.cover || normalized.cover.includes("logo.png") || !normalized.cover.trim()) {
+    normalized.cover = getDefaultProductCover(product.category || "", product.slug || "");
+  }
+  
+  // Ensure images array is valid
+  if (!Array.isArray(normalized.images) || normalized.images.length === 0) {
+    normalized.images = [normalized.cover];
+  }
+  
+  return normalized;
 }
 
 // Fetch products by category from Supabase with fallback
@@ -103,9 +197,9 @@ export async function getProductsByCategory(category: string) {
 
     if (error) throw error;
     
-    // If Supabase returns data, use it
+    // If Supabase returns data, use it with normalization
     if (data && data.length > 0) {
-      return data;
+      return data.map(normalizeProduct);
     }
     
     // Otherwise use fallback
@@ -128,9 +222,9 @@ export async function getProductBySlug(category: string, slug: string) {
 
     if (error) throw error;
     
-    // If Supabase returns data, use it
+    // If Supabase returns data, use it with normalization
     if (data) {
-      return data;
+      return normalizeProduct(data);
     }
     
     // Otherwise use fallback - find in all fallback products

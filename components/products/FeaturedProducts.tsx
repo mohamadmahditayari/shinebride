@@ -10,9 +10,7 @@ function getFeaturedCategoryName(category: any) {
 }
 
 function getCategoryImage(category: any) {
-  if (category.image) return normalizeImageSrc(category.image);
   const slug = String(category.slug || category.link || category.name || "").trim().toLowerCase();
-  if (!slug) return normalizeImageSrc("/images/logo.png");
   
   // Known category images - direct mapping for reliability
   const categoryImages: Record<string, string> = {
@@ -23,6 +21,15 @@ function getCategoryImage(category: any) {
     plexi: "/images/plexi/plexi.jpg",
     abajour: "/images/abajour/abajour.jpg",
   };
+  
+  // If category has an image from Supabase, use it
+  if (category.image) {
+    const normalized = normalizeImageSrc(category.image);
+    // Only use Supabase URL if it's valid and not defaulting to logo
+    if (normalized && !normalized.includes("logo.png")) {
+      return normalized;
+    }
+  }
   
   // Return known image path or fallback
   return normalizeImageSrc(categoryImages[slug] || `/images/${slug}/${slug}.jpg`);
@@ -55,7 +62,7 @@ export default async function FeaturedProducts() {
             {/* Image */}
             <div className="relative w-full aspect-square md:aspect-[3/4] overflow-hidden">
               <OptimizedImage
-                src={normalizeImageSrc(item.image || "/images/logo.png")}
+                src={getCategoryImage(item)}
                 alt={item.name}
                 fill
                 className="object-cover transition duration-700 group-hover:scale-110"
