@@ -4,6 +4,6 @@
   "/cart/page": "/cart",
   "/page": "/",
   "/products/page": "/products",
-  "/products/[category]/page": "/products/[category]",
-  "/products/[category]/[slug]/page": "/products/[category]/[slug]"
+  "/products/[category]/[slug]/page": "/products/[category]/[slug]",
+  "/products/[category]/page": "/products/[category]"
 }

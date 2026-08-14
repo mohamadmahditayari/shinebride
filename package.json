@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "pages:build": "npm run build",
-    "deploy:pages": "npm run pages:build && npx wrangler pages deploy .open-next/assets --project-name=shinebride --commit-dirty=true"
+    "deploy:pages": "npm run build && npx wrangler pages deploy .open-next --project-name=shinebride"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.2",
