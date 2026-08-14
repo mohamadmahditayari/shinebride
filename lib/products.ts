@@ -189,27 +189,38 @@ function normalizeProduct(product: any): any {
 // Fetch products by category from Supabase with fallback
 export async function getProductsByCategory(category: string) {
   try {
+    const cleanCategory = category.trim().toLowerCase();
+
     const { data, error } = await supabase
       .from("products")
       .select("*")
-      .eq("category", category)
+      .eq("category", cleanCategory)
       .order("created_at", { ascending: false });
 
-    if (error) throw error;
-    
-    // If Supabase returns data, use it with normalization
-    if (data && data.length > 0) {
-      return data.map(normalizeProduct);
+    if (error) {
+      console.log("Supabase products error:", error);
+      throw error;
     }
-    
-    // Otherwise use fallback
-    return fallbackProductsByCategory[category] || [];
+
+    console.log("Products from Supabase:", data);
+
+    if (data && data.length > 0) {
+      return data.map((item) =>
+        normalizeProduct({
+          ...item,
+          category: cleanCategory,
+        })
+      );
+    }
+
+    return fallbackProductsByCategory[cleanCategory] || [];
+
   } catch (error) {
-    // Silently fallback to local data if Supabase fails
-    return fallbackProductsByCategory[category] || [];
+    console.log("Using fallback products:", error);
+
+    return fallbackProductsByCategory[category.trim().toLowerCase()] || [];
   }
 }
-
 // Get a single product by slug and category
 export async function getProductBySlug(category: string, slug: string) {
   try {
