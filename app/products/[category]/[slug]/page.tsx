@@ -65,7 +65,7 @@ export default async function ProductPage({ params }: Props) {
           <div className="flex flex-col justify-center">
             <p className="mb-4 text-xs uppercase tracking-[3px] text-[#7d1d2a]">{product.category}</p>
 
-            <h1 className="text-3xl text-[#3d1c22] md:text-4xl">{product.name}</h1>
+            <h1 className="text-3xl font-black text-[#0d0d0d] md:text-4xl">{product.name}</h1>
 
             <div className="mt-5 flex items-center gap-3">
               <div className="h-px w-8 bg-[#7d1d2a]" />
@@ -78,7 +78,7 @@ export default async function ProductPage({ params }: Props) {
             </p>
 
             {product.description && (
-              <p className="mt-6 whitespace-pre-line border-t border-[#7d1d2a]/15 pt-6 text-sm leading-9 text-[#2c171d]">
+              <p className="mt-6 whitespace-pre-line border-t border-[#7d1d2a]/15 pt-6 text-sm font-extrabold leading-9 text-[#0a0a0a]">
                 {product.description}
               </p>
             )}

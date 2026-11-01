@@ -32,7 +32,7 @@ export default async function FeaturedProducts() {
     <section className="mx-auto max-w-7xl px-4 pb-20 md:px-8 md:pb-32">
       <div className="mb-12 text-center md:mb-20">
         <p className="mb-3 text-xs uppercase tracking-[4px] text-[#7d1d2a]">کالکشن ما</p>
-        <h2 className="text-3xl text-[#3d1c22] md:text-5xl">محصولات ویژه</h2>
+        <h2 className="text-3xl font-black text-[#0d0d0d] md:text-5xl">محصولات ویژه</h2>
         <div className="mt-5 flex items-center justify-center gap-3">
           <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#7d1d2a]" />
           <span className="text-[#e5bb6d]">✦</span>
@@ -67,8 +67,8 @@ export default async function FeaturedProducts() {
             </div>
 
             <div className="hidden border-t border-gray-50 p-5 text-center md:block">
-              <h3 className="text-xl font-semibold text-[#3d1c22] transition group-hover:text-[#7d1d2a]">{item.name}</h3>
-              <p className="mt-1 text-sm text-[#3d1c22]">جدیدترین مدلهای اختصاصی</p>
+              <h3 className="text-xl font-black text-[#0d0d0d] transition group-hover:text-[#7d1d2a]">{item.name}</h3>
+              <p className="mt-1 text-sm font-medium text-[#0d0d0d]">جدیدترین مدلهای اختصاصی</p>
               <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[#7d1d2a]">
                 مشاهده مدلها <span className="transition group-hover:translate-x-[-4px]">←</span>
               </span>

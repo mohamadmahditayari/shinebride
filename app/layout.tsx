@@ -3,6 +3,8 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WatermelonAccent from "@/components/WatermelonAccent";
+import FallingWatermelons from "@/components/FallingWatermelons";
 import { CartProvider } from "./context/CartContext";
 
 export const metadata: Metadata = {
@@ -52,11 +54,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="bg-transparent text-gray-900 antialiased">
+      <body className="relative bg-transparent text-gray-900 antialiased">
+        <WatermelonAccent />
+        <FallingWatermelons />
+
         <CartProvider>
           <Navbar />
 
-          <main className="min-h-screen relative z-10">
+          <main className="relative z-10 min-h-screen">
             {children}
           </main>
 

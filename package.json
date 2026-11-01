@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/clean-next-dev.ps1",
     "build": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion",
     "start": "next start",
     "lint": "eslint",

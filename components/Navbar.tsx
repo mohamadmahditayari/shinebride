@@ -19,11 +19,11 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#7d1d2a]/15 bg-[#fffaf7]/80 shadow-[0_8px_24px_rgba(125,29,42,0.08)] backdrop-blur-2xl">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-3 sm:px-4 md:h-20 md:px-8">
         <Link href="/" className="shrink-0">
-          <span dir="ltr" className="flex items-center gap-2">
-            <span className="text-xl tracking-[4px] text-[#7d1d2a] md:text-2xl md:tracking-[6px]">SHINE</span>
-            <span className="text-xl tracking-[4px] text-[#d8a65d] md:text-2xl md:tracking-[6px]">BRIDE</span>
+          <span dir="ltr" className="flex items-center gap-1.5 sm:gap-2">
+            <span className="text-lg tracking-[3px] text-[#7d1d2a] sm:text-xl sm:tracking-[4px] md:text-2xl md:tracking-[6px]">SHINE</span>
+            <span className="text-lg tracking-[3px] text-[#d8a65d] sm:text-xl sm:tracking-[4px] md:text-2xl md:tracking-[6px]">BRIDE</span>
           </span>
         </Link>
 
@@ -42,7 +42,7 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <SearchBar />
+          <SearchBar compact />
           <Link href="/cart" className="relative flex h-10 w-10 items-center justify-center rounded-full border border-[#7d1d2a]/20 bg-[#7d1d2a]/5 transition hover:bg-[#7d1d2a]/10">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7d1d2a" strokeWidth="1.8">
               <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
@@ -98,7 +98,7 @@ export default function Navbar() {
           <button onClick={() => scrollToSection("contact")} className="rounded-xl px-4 py-3 text-right text-sm text-[#5d2a2a] transition hover:bg-[#7d1d2a]/5 hover:text-[#7d1d2a]">تماس با ما</button>
           <a href="https://instagram.com/shine._bride" target="_blank" rel="noopener noreferrer" className="rounded-xl px-4 py-3 text-right text-sm text-[#7d1d2a] transition hover:bg-[#7d1d2a]/5">اینستاگرام ✦</a>
           <div className="px-4 pb-2 pt-1">
-            <SearchBar />
+            <SearchBar compact />
           </div>
         </div>
       )}

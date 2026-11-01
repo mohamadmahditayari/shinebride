@@ -33,7 +33,7 @@ export default function ProductSlider({ title, products, categorySlug }: Props) 
       <div className="mb-5 flex items-center justify-between px-4 md:px-8">
         <div className="flex items-center gap-3">
           <div className="h-6 w-1 rounded-full bg-[#7d1d2a]" />
-          <h2 className="text-xl text-[#3d1c22] md:text-2xl">{title}</h2>
+          <h2 className="text-xl font-black text-[#0d0d0d] md:text-2xl">{title}</h2>
         </div>
         <div className="flex items-center gap-3">
           <button
@@ -79,7 +79,7 @@ export default function ProductSlider({ title, products, categorySlug }: Props) 
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             </div>
             <div className="p-3">
-              <h3 className="truncate text-sm font-semibold text-[#3d1c22] transition group-hover:text-[#7d1d2a]">{item.name}</h3>
+              <h3 className="truncate text-sm font-extrabold text-[#0d0d0d] transition group-hover:text-[#7d1d2a]">{item.name}</h3>
               <p className="mt-1 text-xs font-bold text-[#7d1d2a]">{item.price} تومان</p>
             </div>
           </Link>

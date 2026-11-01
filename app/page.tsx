@@ -1,4 +1,5 @@
 import OptimizedImage from "@/components/OptimizedImage";
+import SearchBar from "@/components/SearchBar";
 import FeaturedProducts from "@/components/products/FeaturedProducts";
 
 export const dynamic = "force-dynamic";
@@ -7,12 +8,12 @@ export const revalidate = 0;
 export default async function Home() {
   return (
     <main className="yalda-shell min-h-screen relative overflow-hidden" style={{ background: "linear-gradient(180deg, #4a1221 0%, #6d1a2d 24%, #7d1d2a 52%, #90374a 100%)" }}>
-      <section className="relative overflow-hidden py-6 md:py-10">
+      <section className="relative overflow-hidden py-4 sm:py-6 md:py-10">
         <div className="pointer-events-none absolute -top-24 -right-16 h-[440px] w-[440px] rounded-full bg-[#a52d40]/15 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-16 -left-12 h-[360px] w-[360px] rounded-full bg-[#e5bb6d]/18 blur-3xl" />
         <div className="pointer-events-none absolute left-1/2 top-12 h-56 w-56 -translate-x-1/2 rounded-full bg-[#f8d7b3]/25 blur-3xl" />
 
-        <div className="relative z-10 mx-auto max-w-5xl px-6 pb-16 pt-14 text-center md:pb-24 md:pt-20">
+        <div className="relative z-10 mx-auto max-w-5xl px-4 pb-14 pt-10 text-center sm:px-6 md:pb-24 md:pt-20">
           <div className="group relative inline-block animate-float-logo">
             <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-[#7d1d2a] via-[#f7d9a7] via-[#c05c62] to-[#7d1d2a] opacity-85 blur-md animate-spin-glow" />
             <div className="absolute -inset-2 rounded-full bg-gradient-to-l from-[#6a1727] via-[#f3dfc3] to-[#d18949] opacity-90 blur-sm animate-spin-glow-reverse" />
@@ -32,11 +33,11 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="mt-10 md:mt-14">
-            <h1 className="text-5xl tracking-[12px] text-[#7d1d2a] md:text-8xl md:tracking-[24px]" style={{ fontWeight: 300 }}>
+          <div className="mt-8 sm:mt-10 md:mt-14">
+            <h1 className="text-4xl tracking-[8px] text-[#7d1d2a] sm:text-5xl sm:tracking-[10px] md:text-8xl md:tracking-[24px]" style={{ fontWeight: 300 }}>
               SHINE
             </h1>
-            <h2 className="-mt-2 text-5xl tracking-[12px] text-[#d8a65d] md:text-8xl md:tracking-[24px]" style={{ fontWeight: 300 }}>
+            <h2 className="-mt-2 text-4xl tracking-[8px] text-[#d8a65d] sm:text-5xl sm:tracking-[10px] md:text-8xl md:tracking-[24px]" style={{ fontWeight: 300 }}>
               BRIDE
             </h2>
           </div>
@@ -51,23 +52,29 @@ export default async function Home() {
             Yalda &nbsp;•&nbsp; Luxury Wedding Accessories
           </p>
 
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row md:mt-12">
-            <a
-              href="/products"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#7d1d2a] to-[#ad2e3f] px-8 py-4 text-sm text-white shadow-[0_16px_32px_rgba(125,29,42,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_22px_38px_rgba(125,29,42,0.42)]"
-            >
-              مشاهده محصولات
-              <span>←</span>
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center rounded-full border border-[#7d1d2a]/40 bg-white/30 px-8 py-4 text-sm text-[#7d1d2a] backdrop-blur-sm transition hover:bg-[#7d1d2a]/10"
-            >
-              تماس با ما
-            </a>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 md:mt-12">
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <SearchBar compact />
+              <span className="text-xs font-medium text-[#f5e5d2] sm:text-sm">جستجوی سریع محصولات</span>
+            </div>
+            <div className="flex w-full max-w-md flex-col justify-center gap-3 sm:max-w-none sm:flex-row">
+              <a
+                href="/products"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#7d1d2a] to-[#ad2e3f] px-8 py-4 text-sm text-white shadow-[0_16px_32px_rgba(125,29,42,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_22px_38px_rgba(125,29,42,0.42)]"
+              >
+                مشاهده محصولات
+                <span>←</span>
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-full border border-[#7d1d2a]/40 bg-white/30 px-8 py-4 text-sm text-[#7d1d2a] backdrop-blur-sm transition hover:bg-[#7d1d2a]/10"
+              >
+                تماس با ما
+              </a>
+            </div>
           </div>
 
-          <div className="mx-auto mt-14 grid max-w-lg grid-cols-3 gap-4 md:mt-20 md:gap-8">
+          <div className="mx-auto mt-12 grid max-w-lg grid-cols-3 gap-2 sm:gap-3 md:mt-20 md:gap-8">
             {[
               { num: "+۱۰۰۰", label: "مشتری راضی" },
               { num: "+۵۰", label: "مدل اختصاصی" },

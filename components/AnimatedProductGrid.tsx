@@ -62,10 +62,10 @@ function ProductCard({ item, index }: { item: Product; index: number }) {
         </div>
 
         <div className="hidden p-5 md:block">
-          <h2 className="text-lg font-semibold text-[#3d1c22] transition group-hover:text-[#7d1d2a]">{item.name}</h2>
+          <h2 className="text-lg font-black text-[#0d0d0d] transition group-hover:text-[#7d1d2a]">{item.name}</h2>
           <p className="mt-1 font-bold text-[#7d1d2a]">{item.price} تومان</p>
           {item.description && (
-            <p className="mt-2 line-clamp-2 text-xs leading-6 text-[#3d1c22]">{item.description}</p>
+            <p className="mt-2 line-clamp-2 text-[11px] font-black leading-6 text-gray-700 tracking-[0.01em]">{item.description}</p>
           )}
           <div className="mt-4 flex items-center gap-1 text-sm font-medium text-[#7d1d2a]">
             مشاهده محصول
@@ -79,7 +79,7 @@ function ProductCard({ item, index }: { item: Product; index: number }) {
 
 export default function AnimatedProductGrid({ products, category }: { products: Product[]; category: string }) {
   return (
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+    <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
       {products.map((item, i) => (
         <ProductCard key={item.id} item={{ ...item, category }} index={i} />
       ))}
