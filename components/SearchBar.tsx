@@ -55,14 +55,14 @@ export default function SearchBar() {
 
   return (
     <div ref={ref} className="relative w-full max-w-xs">
-      <div className="flex items-center gap-2 rounded-full border border-[#D4AF37]/25 bg-[#D4AF37]/5 px-4 py-2 focus-within:border-[#D4AF37]/60 focus-within:bg-white transition">
+      <div className="flex items-center gap-2 rounded-full border border-[#7d1d2a]/25 bg-[#7d1d2a]/5 px-4 py-2 transition focus-within:border-[#7d1d2a]/60 focus-within:bg-white">
         {loading ? (
-          <svg className="animate-spin h-4 w-4 text-[#D4AF37] shrink-0" viewBox="0 0 24 24" fill="none">
+          <svg className="h-4 w-4 shrink-0 animate-spin text-[#7d1d2a]" viewBox="0 0 24 24" fill="none">
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
           </svg>
         ) : (
-          <svg className="h-4 w-4 text-[#D4AF37]/60 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg className="h-4 w-4 shrink-0 text-[#7d1d2a]/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
           </svg>
         )}
@@ -75,7 +75,7 @@ export default function SearchBar() {
           className="w-full bg-transparent text-sm text-gray-700 placeholder-gray-400 outline-none"
         />
         {query && (
-          <button onClick={() => { setQuery(""); setResults([]); setOpen(false); }} className="text-gray-300 hover:text-gray-500 transition shrink-0">
+          <button onClick={() => { setQuery(""); setResults([]); setOpen(false); }} className="shrink-0 text-gray-300 transition hover:text-gray-500">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
             </svg>
@@ -83,18 +83,17 @@ export default function SearchBar() {
         )}
       </div>
 
-      {/* Dropdown */}
       {open && (
-        <div className="absolute top-full mt-2 left-0 right-0 z-50 rounded-2xl border border-[#D4AF37]/15 bg-white shadow-2xl shadow-black/10 overflow-hidden">
+        <div className="absolute left-0 right-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-[#7d1d2a]/15 bg-white shadow-2xl shadow-black/10">
           {results.length > 0 ? (
             <>
               {results.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => go(item)}
-                  className="w-full flex items-center gap-3 px-4 py-3 hover:bg-[#D4AF37]/5 transition text-right border-b border-gray-50 last:border-0"
+                  className="flex w-full items-center gap-3 border-b border-gray-50 px-4 py-3 text-right transition hover:bg-[#7d1d2a]/5 last:border-0"
                 >
-                  <div className="relative h-10 w-10 rounded-xl overflow-hidden shrink-0 bg-gray-100">
+                  <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-xl bg-gray-100">
                     <OptimizedImage
                       src={normalizeImageSrc(item.cover || "/images/logo.png")}
                       alt={item.name}
@@ -102,17 +101,17 @@ export default function SearchBar() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-800 truncate">{item.name}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-medium text-gray-800">{item.name}</p>
                     <p className="text-xs text-gray-400">{item.price} تومان</p>
                   </div>
-                  <span className="text-[#D4AF37]/50 text-xs shrink-0">←</span>
+                  <span className="shrink-0 text-xs text-[#7d1d2a]/50">←</span>
                 </button>
               ))}
-              <div className="px-4 py-2 bg-gray-50 text-center">
+              <div className="bg-gray-50 px-4 py-2 text-center">
                 <button
                   onClick={() => { router.push(`/products?q=${query}`); setOpen(false); }}
-                  className="text-xs text-[#D4AF37] hover:underline"
+                  className="text-xs text-[#7d1d2a] hover:underline"
                 >
                   مشاهده همه نتایج
                 </button>

@@ -4,16 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "opennextjs-cloudflare build",
+    "build": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "opennextjs-cloudflare build && wrangler deploy"
+    "deploy": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion && wrangler deploy"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.2",
     "framer-motion": "^12.42.2",
     "lucide-react": "^1.23.0",
-    "next": "^15.3.0",
+    "next": "15.3.5",
     "react": "^18.2.0",
     "react-countup": "^6.5.3",
     "react-dom": "^18.2.0",
@@ -27,7 +27,7 @@
     "@types/react-dom": "^18.2.0",
     "dotenv": "^17.4.2",
     "eslint": "^9",
-    "eslint-config-next": "16.2.10",
+    "eslint-config-next": "15.3.5",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.118.0"

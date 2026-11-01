@@ -56,15 +56,12 @@ export async function getCategories() {
 
     if (error) throw error;
     
-    // If Supabase returns data, use it
     if (data && data.length > 0) {
       return data;
     }
     
-    // Otherwise use fallback
     return fallbackCategories;
   } catch (error) {
-    // Silently fallback to local data if Supabase fails
     return fallbackCategories;
   }
 }
@@ -79,15 +76,12 @@ export async function getAllProducts() {
 
     if (error) throw error;
     
-    // If Supabase returns data, use it with normalization
     if (data && data.length > 0) {
       return data.map(normalizeProduct);
     }
     
-    // Otherwise use fallback
     return fallbackProducts;
   } catch (error) {
-    // Silently fallback to local data if Supabase fails
     return fallbackProducts;
   }
 }
@@ -156,7 +150,6 @@ function getDefaultProductCover(category: string, slug: string): string {
     return categoryData[slug];
   }
   
-  // Default category images
   const categoryDefaults: Record<string, string> = {
     esfand: "/images/esfand/esfand.jpg",
     baleh: "/images/baleh/baleh.jpg",
@@ -173,12 +166,10 @@ function getDefaultProductCover(category: string, slug: string): string {
 function normalizeProduct(product: any): any {
   const normalized = { ...product };
   
-  // Ensure cover is valid
   if (!normalized.cover || normalized.cover.includes("logo.png") || !normalized.cover.trim()) {
     normalized.cover = getDefaultProductCover(product.category || "", product.slug || "");
   }
   
-  // Ensure images array is valid
   if (!Array.isArray(normalized.images) || normalized.images.length === 0) {
     normalized.images = [normalized.cover];
   }
@@ -213,14 +204,24 @@ export async function getProductsByCategory(category: string) {
       );
     }
 
-    return fallbackProductsByCategory[cleanCategory] || [];
+    // FIX: make sure fallback items always carry the category field
+    return (fallbackProductsByCategory[cleanCategory] || []).map((p) => ({
+      ...p,
+      category: cleanCategory,
+    }));
 
   } catch (error) {
     console.log("Using fallback products:", error);
 
-    return fallbackProductsByCategory[category.trim().toLowerCase()] || [];
+    const cleanCategory = category.trim().toLowerCase();
+    // FIX: same here, for the catch branch
+    return (fallbackProductsByCategory[cleanCategory] || []).map((p) => ({
+      ...p,
+      category: cleanCategory,
+    }));
   }
 }
+
 // Get a single product by slug and category
 export async function getProductBySlug(category: string, slug: string) {
   try {
@@ -233,15 +234,12 @@ export async function getProductBySlug(category: string, slug: string) {
 
     if (error) throw error;
     
-    // If Supabase returns data, use it with normalization
     if (data) {
       return normalizeProduct(data);
     }
     
-    // Otherwise use fallback - find in all fallback products
     return fallbackProducts.find(p => p.category === category && p.slug === slug) || null;
   } catch (error) {
-    // Silently fallback to local data if Supabase fails
     return fallbackProducts.find(p => p.category === category && p.slug === slug) || null;
   }
 }

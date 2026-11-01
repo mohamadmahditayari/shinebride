@@ -4,116 +4,112 @@ import EsfandSlider from "@/components/EsfandSlider";
 
 export default async function Home() {
   return (
-    <main className="min-h-screen" style={{ background: "linear-gradient(160deg,#fffdf9 0%,#faf6ee 50%,#f5f0e8 100%)" }}>
+    <main className="yalda-shell min-h-screen relative overflow-hidden" style={{ background: "linear-gradient(180deg, #4a1221 0%, #6d1a2d 24%, #7d1d2a 52%, #90374a 100%)" }}>
+      <div className="yalda-decor" aria-hidden="true">
+        <span className="flower flower-1" />
+        <span className="flower flower-2" />
+        <span className="flower flower-3" />
+        <span className="henwaneh henvaneh-1" />
+        <span className="henwaneh henvaneh-2" />
+        <span className="henwaneh henvaneh-3" />
+        <span className="pomegranate pomegranate-1" />
+        <span className="pomegranate pomegranate-2" />
+        <span className="pomegranate pomegranate-3" />
+        <span className="acorn acorn-1" />
+        <span className="acorn acorn-2" />
+        <span className="acorn acorn-3" />
+        <span className="sparkle sparkle-1" />
+        <span className="sparkle sparkle-2" />
+        <span className="sparkle sparkle-3" />
+        <span className="sparkle sparkle-4" />
+      </div>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden py-6 md:py-10">
+        <div className="pointer-events-none absolute -top-24 -right-16 h-[440px] w-[440px] rounded-full bg-[#a52d40]/15 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -left-12 h-[360px] w-[360px] rounded-full bg-[#e5bb6d]/18 blur-3xl" />
+        <div className="pointer-events-none absolute left-1/2 top-12 h-56 w-56 -translate-x-1/2 rounded-full bg-[#f8d7b3]/25 blur-3xl" />
 
-        {/* Background decorative circles */}
-        <div className="pointer-events-none absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full bg-[#D4AF37]/8 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 -left-20 h-[400px] w-[400px] rounded-full bg-[#C0C0C0]/10 blur-3xl" />
+        <div className="relative z-10 mx-auto max-w-5xl px-6 pb-16 pt-14 text-center md:pb-24 md:pt-20">
+          <div className="group relative inline-block animate-float-logo">
+            <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-[#7d1d2a] via-[#f7d9a7] via-[#c05c62] to-[#7d1d2a] opacity-85 blur-md animate-spin-glow" />
+            <div className="absolute -inset-2 rounded-full bg-gradient-to-l from-[#6a1727] via-[#f3dfc3] to-[#d18949] opacity-90 blur-sm animate-spin-glow-reverse" />
+            <div className="absolute -inset-8 rounded-full bg-[#ad2e3f]/25 blur-2xl animate-pulse-glow" />
 
-        <div className="relative max-w-5xl mx-auto px-6 pt-16 pb-16 md:pt-28 md:pb-24 text-center">
-
-          {/* Animated Logo with Luxury Shine & Floating Motion */}
-          <div className="relative inline-block animate-float-logo group">
-
-            {/* Outer spinning aura 1 */}
-            <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#FFF8DC] via-[#E6C280] to-[#D4AF37] animate-spin-glow blur-md opacity-80 group-hover:opacity-100 transition" />
-
-            {/* Inner reverse-spinning aura 2 */}
-            <div className="absolute -inset-2 rounded-full bg-gradient-to-l from-[#B8860B] via-[#FFF8DC] to-[#D4AF37] animate-spin-glow-reverse blur-sm opacity-90" />
-
-            {/* Ambient breathing glow */}
-            <div className="absolute -inset-8 rounded-full bg-[#D4AF37]/35 blur-2xl animate-pulse-glow" />
-
-            {/* Main logo frame */}
-            <div className="relative rounded-full p-[3px] bg-gradient-to-tr from-[#D4AF37] via-[#FFF8DC] via-[#F3E5AB] to-[#B8860B] shadow-2xl shadow-[#D4AF37]/40 transition-transform duration-500 group-hover:scale-105">
+            <div className="relative rounded-full p-[3px] bg-gradient-to-tr from-[#7d1d2a] via-[#f7d9a7] via-[#d98e7e] to-[#6a1727] shadow-[0_20px_50px_rgba(125,29,42,0.35)] transition-transform duration-500 group-hover:scale-105">
               <div className="relative overflow-hidden rounded-full bg-white p-1">
                 <OptimizedImage
                   src="/images/logo.png"
                   alt="ShineBride"
                   width={110}
                   height={110}
-                  className="relative mx-auto rounded-full md:w-[140px] md:h-[140px] object-cover transition-transform duration-700 group-hover:rotate-3"
+                  className="relative mx-auto rounded-full object-cover md:h-[140px] md:w-[140px] transition-transform duration-700 group-hover:rotate-3"
                 />
-                {/* Shining sweep light effect across the logo */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/85 to-transparent animate-shine-sweep pointer-events-none" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/85 to-transparent animate-shine-sweep" />
               </div>
             </div>
-
           </div>
 
-          {/* Title */}
           <div className="mt-10 md:mt-14">
-            <h1 className="text-6xl md:text-8xl tracking-[14px] md:tracking-[24px]" style={{ color: "#D4AF37", fontWeight: 300 }}>
+            <h1 className="text-5xl tracking-[12px] text-[#7d1d2a] md:text-8xl md:tracking-[24px]" style={{ fontWeight: 300 }}>
               SHINE
             </h1>
-            <h2 className="text-6xl md:text-8xl tracking-[14px] md:tracking-[24px] -mt-2" style={{ color: "#9CA3AF", fontWeight: 300 }}>
+            <h2 className="-mt-2 text-5xl tracking-[12px] text-[#d8a65d] md:text-8xl md:tracking-[24px]" style={{ fontWeight: 300 }}>
               BRIDE
             </h2>
           </div>
 
-          {/* Divider */}
-          <div className="flex items-center justify-center gap-4 mt-8 md:mt-10">
-            <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent to-[#D4AF37]" />
-            <span className="text-[#D4AF37] text-lg">✦</span>
-            <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent to-[#D4AF37]" />
+          <div className="mt-8 flex items-center justify-center gap-4 md:mt-10">
+            <div className="h-px w-16 bg-gradient-to-r from-transparent to-[#7d1d2a] md:w-24" />
+            <span className="text-lg text-[#d8a65d]">✦</span>
+            <div className="h-px w-16 bg-gradient-to-l from-transparent to-[#7d1d2a] md:w-24" />
           </div>
 
-          {/* Subtitle */}
-          <p className="mt-6 text-xs md:text-sm tracking-[4px] md:tracking-[6px] uppercase text-gray-400">
-            Luxury Wedding Accessories
+          <p className="mt-6 text-xs uppercase tracking-[4px] text-[#7d1d2a]/70 md:text-sm md:tracking-[6px]">
+            Yalda &nbsp;•&nbsp; Luxury Wedding Accessories
           </p>
 
-          {/* CTA */}
-          <div className="mt-10 md:mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row md:mt-12">
             <a
               href="/products"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#c9a227] px-8 py-4 text-sm text-white shadow-xl shadow-[#D4AF37]/30 transition hover:shadow-[#D4AF37]/50 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#7d1d2a] to-[#ad2e3f] px-8 py-4 text-sm text-white shadow-[0_16px_32px_rgba(125,29,42,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_22px_38px_rgba(125,29,42,0.42)]"
             >
               مشاهده محصولات
               <span>←</span>
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full border border-[#D4AF37]/40 px-8 py-4 text-sm text-[#D4AF37] transition hover:bg-[#D4AF37]/10"
+              className="inline-flex items-center justify-center rounded-full border border-[#7d1d2a]/40 bg-white/30 px-8 py-4 text-sm text-[#7d1d2a] backdrop-blur-sm transition hover:bg-[#7d1d2a]/10"
             >
               تماس با ما
             </a>
           </div>
 
-          {/* Stats */}
-          <div className="mt-14 md:mt-20 grid grid-cols-3 gap-4 md:gap-8 max-w-lg mx-auto">
+          <div className="mx-auto mt-14 grid max-w-lg grid-cols-3 gap-4 md:mt-20 md:gap-8">
             {[
               { num: "+۱۰۰۰", label: "مشتری راضی" },
               { num: "+۵۰", label: "مدل اختصاصی" },
               { num: "+۶", label: "سال تجربه" },
             ].map((s) => (
-              <div key={s.label} className="text-center">
-                <p className="text-2xl md:text-3xl font-bold text-[#D4AF37]">{s.num}</p>
-                <p className="mt-1 text-xs text-gray-400">{s.label}</p>
+              <div key={s.label} className="rounded-2xl border border-[#7d1d2a]/10 bg-white/25 p-4 shadow-[0_10px_30px_rgba(125,29,42,0.06)] backdrop-blur-sm">
+                <p className="text-2xl font-bold text-[#7d1d2a] md:text-3xl">{s.num}</p>
+                <p className="mt-1 text-[10px] text-[#7d1d2a]/70 md:text-xs">{s.label}</p>
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
-      {/* Divider wave */}
       <div className="w-full overflow-hidden leading-none">
-        <svg viewBox="0 0 1440 40" className="w-full fill-white/60">
+        <svg viewBox="0 0 1440 40" className="w-full fill-[#f7eee7]">
           <path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" />
         </svg>
       </div>
 
       <FeaturedProducts />
 
-      {/* Product Sliders */}
-      <div className="max-w-7xl mx-auto pb-16">
+      <div className="mx-auto max-w-7xl pb-16">
         <EsfandSlider />
       </div>
-
     </main>
   );
 }

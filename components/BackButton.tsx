@@ -8,7 +8,7 @@ export default function BackButton() {
   return (
     <button
       onClick={() => router.back()}
-      className="group fixed top-20 left-4 z-50 flex items-center gap-2 rounded-full bg-white/90 backdrop-blur border border-[#D4AF37]/30 px-4 py-2.5 shadow-lg shadow-black/10 hover:bg-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300"
+      className="group fixed left-4 top-20 z-50 flex items-center gap-2 rounded-full border border-[#7d1d2a]/30 bg-[#fff6f3]/90 px-4 py-2.5 shadow-lg shadow-black/10 backdrop-blur transition-all duration-300 hover:border-[#7d1d2a] hover:bg-[#7d1d2a]"
     >
       <svg
         width="16"
@@ -17,11 +17,11 @@ export default function BackButton() {
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
-        className="text-[#D4AF37] group-hover:text-white transition-all duration-300 group-hover:translate-x-[-3px]"
+        className="text-[#7d1d2a] transition-all duration-300 group-hover:translate-x-[-3px] group-hover:text-white"
       >
         <polyline points="15 18 9 12 15 6" />
       </svg>
-      <span className="text-sm text-gray-600 group-hover:text-white transition-all duration-300">
+      <span className="text-sm text-[#2f171d] transition-all duration-300 group-hover:text-white">
         بازگشت
       </span>
     </button>

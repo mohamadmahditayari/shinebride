@@ -31,7 +31,7 @@ export default function AddToCart({ product }: Props) {
       className={`mt-8 w-full rounded-full py-4 text-base font-semibold shadow-lg transition-all duration-300 ${
         added
           ? "bg-green-500 shadow-green-200 text-white"
-          : "bg-gradient-to-r from-[#D4AF37] to-[#c9a227] shadow-[#D4AF37]/30 text-white hover:shadow-[#D4AF37]/50 hover:-translate-y-0.5"
+          : "bg-gradient-to-r from-[#7d1d2a] to-[#ad2e3f] shadow-[#7d1d2a]/30 text-white hover:shadow-[#7d1d2a]/45 hover:-translate-y-0.5"
       }`}
     >
       {added ? "✓ به سبد اضافه شد" : inCart ? "افزودن مجدد به سبد" : "افزودن به سبد خرید"}

@@ -20,20 +20,18 @@ export default function ProductGallery({ images, alt }: Props) {
         alt={alt}
         width={700}
         height={700}
-        className="rounded-3xl w-full"
+        className="w-full rounded-3xl"
       />
 
       {normalizedImages.length > 1 && (
-        <div className="grid grid-cols-4 gap-4 mt-5">
+        <div className="mt-5 grid grid-cols-4 gap-4">
           {normalizedImages.map((img, index) => (
             <button
               key={index}
               type="button"
               onClick={() => setSelectedImage(index)}
               className={`overflow-hidden rounded-2xl border-2 transition ${
-                selectedImage === index
-                  ? "border-[#D4AF37]"
-                  : "border-transparent"
+                selectedImage === index ? "border-[#7d1d2a]" : "border-transparent"
               }`}
             >
               <OptimizedImage
@@ -41,7 +39,7 @@ export default function ProductGallery({ images, alt }: Props) {
                 alt={`${alt}-${index}`}
                 width={180}
                 height={180}
-                className="w-full h-auto"
+                className="h-auto w-full"
               />
             </button>
           ))}

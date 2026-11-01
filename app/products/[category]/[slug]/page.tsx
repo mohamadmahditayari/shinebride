@@ -5,19 +5,18 @@ import AddToCart from "@/components/AddToCart";
 import BackButton from "@/components/BackButton";
 import { getProductBySlug, fallbackProducts } from "@/lib/products";
 
-export const dynamic = "force-static";
-export const dynamicParams = false;
+export const dynamic = "force-dynamic";
+export const dynamicParams = true;
 
-// Generate static params from fallback products (for static site generation)
 export async function generateStaticParams() {
-  // Try to get products from Supabase first
   try {
     const { supabase } = await import("@/lib/supabase");
+
     const { data: products } = await supabase
       .from("products")
       .select("category, slug")
       .order("created_at");
-    
+
     if (products && products.length > 0) {
       return products.map((product) => ({
         category: product.category,
@@ -25,10 +24,9 @@ export async function generateStaticParams() {
       }));
     }
   } catch (error) {
-    // Fall back to static products
+    console.log("Supabase params error:", error);
   }
-  
-  // Fallback to local products
+
   return fallbackProducts.map((product) => ({
     category: product.category,
     slug: product.slug,
@@ -36,7 +34,10 @@ export async function generateStaticParams() {
 }
 
 type Props = {
-  params: Promise<{ category: string; slug: string }>;
+  params: Promise<{
+    category: string;
+    slug: string;
+  }>;
 };
 
 export default async function ProductPage({ params }: Props) {
@@ -44,7 +45,9 @@ export default async function ProductPage({ params }: Props) {
 
   const product = await getProductBySlug(category, slug);
 
-  if (!product) notFound();
+  if (!product) {
+    notFound();
+  }
 
   const images =
     Array.isArray(product.images) && product.images.length > 0
@@ -54,39 +57,28 @@ export default async function ProductPage({ params }: Props) {
       : ["/images/logo.png"];
 
   return (
-    <main
-      className="min-h-screen"
-      style={{
-        background: "linear-gradient(160deg,#fffdf9 0%,#faf6ee 100%)",
-      }}
-    >
-      <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16">
+    <main className="yalda-page-shell min-h-screen">
+      <div className="mx-auto max-w-6xl px-4 py-12 md:px-8 md:py-20">
+        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <ProductGallery images={images} alt={product.name} />
 
           <div className="flex flex-col justify-center">
-            <p className="text-xs tracking-[3px] uppercase text-[#D4AF37] mb-4">
-              {product.category}
-            </p>
+            <p className="mb-4 text-xs uppercase tracking-[3px] text-[#7d1d2a]">{product.category}</p>
 
-            <h1 className="text-3xl md:text-4xl text-gray-800">
-              {product.name}
-            </h1>
+            <h1 className="text-3xl text-[#3d1c22] md:text-4xl">{product.name}</h1>
 
-            <div className="flex items-center gap-3 mt-5">
-              <div className="h-px w-8 bg-[#D4AF37]" />
-              <span className="text-[#D4AF37] text-xs">✦</span>
+            <div className="mt-5 flex items-center gap-3">
+              <div className="h-px w-8 bg-[#7d1d2a]" />
+              <span className="text-xs text-[#e5bb6d]">✦</span>
             </div>
 
-            <p className="text-2xl md:text-3xl text-[#D4AF37] font-bold mt-5">
+            <p className="mt-5 text-2xl font-bold text-[#7d1d2a] md:text-3xl">
               {product.price}
-              <span className="text-base font-normal text-gray-400">
-                {" "}تومان
-              </span>
+              <span className="text-base font-normal text-[#6d3b42]"> تومان</span>
             </p>
 
             {product.description && (
-              <p className="mt-6 leading-9 text-gray-500 text-sm whitespace-pre-line border-t border-gray-100 pt-6">
+              <p className="mt-6 whitespace-pre-line border-t border-[#7d1d2a]/15 pt-6 text-sm leading-9 text-[#2c171d]">
                 {product.description}
               </p>
             )}
@@ -102,12 +94,12 @@ export default async function ProductPage({ params }: Props) {
               }}
             />
 
-            <div className="flex flex-col sm:flex-row gap-3 mt-3">
+            <div className="mt-3 flex flex-col gap-3 sm:flex-row">
               <a
                 href="https://instagram.com/shine._bride"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 rounded-full border border-[#D4AF37]/30 py-3.5 text-center text-sm text-[#D4AF37] hover:bg-[#D4AF37]/5 transition"
+                className="flex-1 rounded-full border border-[#7d1d2a]/30 py-3.5 text-center text-sm text-[#7d1d2a] transition hover:bg-[#7d1d2a]/5"
               >
                 سفارش از اینستاگرام
               </a>
@@ -116,7 +108,7 @@ export default async function ProductPage({ params }: Props) {
                 href="https://wa.me/989011322245"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 rounded-full border border-emerald-500/30 py-3.5 text-center text-sm text-emerald-600 hover:bg-emerald-50 transition"
+                className="flex-1 rounded-full border border-emerald-500/30 py-3.5 text-center text-sm text-emerald-600 transition hover:bg-emerald-50"
               >
                 سفارش از واتساپ
               </a>

@@ -44,6 +44,7 @@ icons: {
     icon: "/favicon.ico",
   },
 };
+
 export default function RootLayout({
   children,
 }: {
@@ -51,13 +52,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body
-        className="bg-white text-gray-900 antialiased"
-      >
+      <body className="bg-transparent text-gray-900 antialiased">
+        <div className="yalda-decor" aria-hidden="true">
+          <span className="flower flower-1" />
+          <span className="flower flower-2" />
+          <span className="flower flower-3" />
+          <span className="flower flower-4" />
+          <span className="pomegranate pomegranate-1" />
+          <span className="pomegranate pomegranate-2" />
+          <span className="pomegranate pomegranate-3" />
+          <span className="sparkle sparkle-1" />
+          <span className="sparkle sparkle-2" />
+          <span className="sparkle sparkle-3" />
+          <span className="sparkle sparkle-4" />
+        </div>
+
         <CartProvider>
           <Navbar />
 
-          <main className="min-h-screen">
+          <main className="min-h-screen relative z-10">
             {children}
           </main>
 
