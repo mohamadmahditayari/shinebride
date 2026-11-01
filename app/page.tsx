@@ -5,25 +5,6 @@ import EsfandSlider from "@/components/EsfandSlider";
 export default async function Home() {
   return (
     <main className="yalda-shell min-h-screen relative overflow-hidden" style={{ background: "linear-gradient(180deg, #4a1221 0%, #6d1a2d 24%, #7d1d2a 52%, #90374a 100%)" }}>
-      <div className="yalda-decor" aria-hidden="true">
-        <span className="flower flower-1" />
-        <span className="flower flower-2" />
-        <span className="flower flower-3" />
-        <span className="henwaneh henvaneh-1" />
-        <span className="henwaneh henvaneh-2" />
-        <span className="henwaneh henvaneh-3" />
-        <span className="pomegranate pomegranate-1" />
-        <span className="pomegranate pomegranate-2" />
-        <span className="pomegranate pomegranate-3" />
-        <span className="acorn acorn-1" />
-        <span className="acorn acorn-2" />
-        <span className="acorn acorn-3" />
-        <span className="sparkle sparkle-1" />
-        <span className="sparkle sparkle-2" />
-        <span className="sparkle sparkle-3" />
-        <span className="sparkle sparkle-4" />
-      </div>
-
       <section className="relative overflow-hidden py-6 md:py-10">
         <div className="pointer-events-none absolute -top-24 -right-16 h-[440px] w-[440px] rounded-full bg-[#a52d40]/15 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-16 -left-12 h-[360px] w-[360px] rounded-full bg-[#e5bb6d]/18 blur-3xl" />

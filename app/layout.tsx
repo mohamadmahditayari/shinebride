@@ -54,17 +54,12 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body className="bg-transparent text-gray-900 antialiased">
         <div className="yalda-decor" aria-hidden="true">
-          <span className="flower flower-1" />
-          <span className="flower flower-2" />
-          <span className="flower flower-3" />
-          <span className="flower flower-4" />
-          <span className="pomegranate pomegranate-1" />
-          <span className="pomegranate pomegranate-2" />
-          <span className="pomegranate pomegranate-3" />
-          <span className="sparkle sparkle-1" />
-          <span className="sparkle sparkle-2" />
-          <span className="sparkle sparkle-3" />
-          <span className="sparkle sparkle-4" />
+          <span className="emoji-fruit emoji-watermelon-1">🍉</span>
+          <span className="emoji-fruit emoji-watermelon-2">🍉</span>
+          <span className="emoji-fruit emoji-watermelon-3">🍉</span>
+          <span className="emoji-fruit emoji-watermelon-4">🍉</span>
+          <span className="emoji-fruit emoji-watermelon-5">🍉</span>
+          <span className="emoji-fruit emoji-watermelon-6">🍉</span>
         </div>
 
         <CartProvider>
