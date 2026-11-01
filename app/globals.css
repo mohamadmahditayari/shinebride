@@ -109,11 +109,13 @@ nav {
 .yalda-page-shell li,
 .yalda-page-shell small,
 .yalda-page-shell label,
-.yalda-page-shell span,
-.yalda-page-shell div,
+.yalda-page-shell span {
+  color: inherit;
+}
+
 .yalda-page-shell input,
 .yalda-page-shell textarea {
-  color: #2d171d;
+  color: inherit;
 }
 
 @keyframes logoShineSweep {

@@ -1,6 +1,9 @@
 import OptimizedImage from "@/components/OptimizedImage";
 import FeaturedProducts from "@/components/products/FeaturedProducts";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default async function Home() {
   return (
     <main className="yalda-shell min-h-screen relative overflow-hidden" style={{ background: "linear-gradient(180deg, #4a1221 0%, #6d1a2d 24%, #7d1d2a 52%, #90374a 100%)" }}>

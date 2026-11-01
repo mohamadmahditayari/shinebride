@@ -2,12 +2,15 @@ import { supabase } from "./supabase";
 
 // Fallback data for when Supabase is not available
 export const fallbackCategories = [
+  { id: 0, name: "اسپند دود کن", slug: "esfand", image: "/images/esfand/esfand.jpg" },
   { id: 1, name: "ست بله برون", slug: "baleh", image: "/images/baleh/baleh.jpg" },
   { id: 2, name: "گیفت", slug: "gift", image: "/images/gift/gift.jpg" },
   { id: 3, name: "گیفت ماشین", slug: "car", image: "/images/car/car.jpg" },
   { id: 4, name: "پلکسی", slug: "plexi", image: "/images/plexi/plexi.jpg" },
   { id: 5, name: "آباژور", slug: "abajour", image: "/images/abajour/abajour.jpg" },
 ];
+
+const HIDDEN_CATEGORY_SLUGS = new Set([]);
 
 export const fallbackProductsByCategory: Record<string, Array<any>> = {
   esfand: [
@@ -54,7 +57,7 @@ export async function getCategories() {
     if (error) throw error;
     
     if (data && data.length > 0) {
-      return data;
+      return data.filter((category) => !HIDDEN_CATEGORY_SLUGS.has(String(category.slug || "").trim().toLowerCase()));
     }
     
     return fallbackCategories;
@@ -217,6 +220,49 @@ export async function getProductsByCategory(category: string) {
       category: cleanCategory,
     }));
   }
+}
+
+export async function searchProducts(searchTerm: string) {
+  const query = searchTerm.trim();
+
+  if (!query) {
+    return [];
+  }
+
+  const normalized = query.toLowerCase();
+
+  try {
+    const { data, error } = await supabase
+      .from("products")
+      .select("id, name, category, slug, cover, price, description")
+      .or(`name.ilike.%${query}%,category.ilike.%${query}%`)
+      .limit(12);
+
+    if (error) throw error;
+
+    if (data && data.length > 0) {
+      return data.map(normalizeProduct);
+    }
+  } catch (error) {
+    console.log("Search fallback triggered:", error);
+  }
+
+  return fallbackProducts.filter((product) => {
+    if (HIDDEN_CATEGORY_SLUGS.has(String(product.category || "").trim().toLowerCase())) {
+      return false;
+    }
+
+    const haystack = [
+      product.name,
+      product.category,
+      product.slug,
+      product.description || "",
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    return haystack.includes(normalized);
+  });
 }
 
 // Get a single product by slug and category
