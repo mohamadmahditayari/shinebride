@@ -1,6 +1,5 @@
 import OptimizedImage from "@/components/OptimizedImage";
 import FeaturedProducts from "@/components/products/FeaturedProducts";
-import EsfandSlider from "@/components/EsfandSlider";
 
 export default async function Home() {
   return (
@@ -87,10 +86,6 @@ export default async function Home() {
       </div>
 
       <FeaturedProducts />
-
-      <div className="mx-auto max-w-7xl pb-16">
-        <EsfandSlider />
-      </div>
     </main>
   );
 }

@@ -2,19 +2,16 @@ import { supabase } from "./supabase";
 
 // Fallback data for when Supabase is not available
 export const fallbackCategories = [
-  { id: 1, name: "اسپند دود کن", slug: "esfand", image: "/images/esfand/esfand.jpg" },
-  { id: 2, name: "ست بله برون", slug: "baleh", image: "/images/baleh/baleh.jpg" },
-  { id: 3, name: "گیفت", slug: "gift", image: "/images/gift/gift.jpg" },
-  { id: 4, name: "گیفت ماشین", slug: "car", image: "/images/car/car.jpg" },
-  { id: 5, name: "پلکسی", slug: "plexi", image: "/images/plexi/plexi.jpg" },
-  { id: 6, name: "آباژور", slug: "abajour", image: "/images/abajour/abajour.jpg" },
+  { id: 1, name: "ست بله برون", slug: "baleh", image: "/images/baleh/baleh.jpg" },
+  { id: 2, name: "گیفت", slug: "gift", image: "/images/gift/gift.jpg" },
+  { id: 3, name: "گیفت ماشین", slug: "car", image: "/images/car/car.jpg" },
+  { id: 4, name: "پلکسی", slug: "plexi", image: "/images/plexi/plexi.jpg" },
+  { id: 5, name: "آباژور", slug: "abajour", image: "/images/abajour/abajour.jpg" },
 ];
 
 export const fallbackProductsByCategory: Record<string, Array<any>> = {
   esfand: [
     { id: 1, name: "اسپند دود کن اقتصادی", price: "1.550", cover: "/images/esfand/esfand.jpg", slug: "em", description: "اسپند دود کن کلاسیک با طراحی شیک و مناسب برای هدیه", images: ["/images/esfand/em/1.jpg"] },
-    { id: 2, name: "ست وی‌ای‌پی ترک", price: "5.580", cover: "/images/esfand/vip/1.jpg", slug: "vip", description: "ست لوکس و خاص برای مراسم و انتخاب‌های ویژه", images: ["/images/esfand/vip/1.jpg", "/images/esfand/vip/2.jpg", "/images/esfand/vip/3.jpg"] },
-    { id: 3, name: "ست استیل دو تکه", price: "1.980", cover: "/images/esfand/amjad/1.jpg", slug: "amjad", description: "طرح ساده و شیک برای استفاده روزمره", images: ["/images/esfand/amjad/1.jpg", "/images/esfand/amjad/2.jpg"] },
   ],
   baleh: [
     { id: 4, name: "ست بله برون کلاسیک", price: "3.200", cover: "/images/baleh/darbay/1.jpg", slug: "baleh-classic", description: "تکمیل کننده‌ی زیبایی و هویت خاص", images: ["/images/baleh/darbay/1.jpg"] },

@@ -94,21 +94,12 @@ export default async function ProductPage({ params }: Props) {
               }}
             />
 
-            <div className="mt-3 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="https://instagram.com/shine._bride"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 rounded-full border border-[#7d1d2a]/30 py-3.5 text-center text-sm text-[#7d1d2a] transition hover:bg-[#7d1d2a]/5"
-              >
-                سفارش از اینستاگرام
-              </a>
-
+            <div className="mt-3 flex justify-center">
               <a
                 href="https://wa.me/989011322245"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 rounded-full border border-emerald-500/30 py-3.5 text-center text-sm text-emerald-600 transition hover:bg-emerald-50"
+                className="w-full rounded-full border border-emerald-500/30 py-3.5 text-center text-sm text-emerald-600 transition hover:bg-emerald-50"
               >
                 سفارش از واتساپ
               </a>

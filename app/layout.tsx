@@ -53,15 +53,6 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className="bg-transparent text-gray-900 antialiased">
-        <div className="yalda-decor" aria-hidden="true">
-          <span className="emoji-fruit emoji-watermelon-1">🍉</span>
-          <span className="emoji-fruit emoji-watermelon-2">🍉</span>
-          <span className="emoji-fruit emoji-watermelon-3">🍉</span>
-          <span className="emoji-fruit emoji-watermelon-4">🍉</span>
-          <span className="emoji-fruit emoji-watermelon-5">🍉</span>
-          <span className="emoji-fruit emoji-watermelon-6">🍉</span>
-        </div>
-
         <CartProvider>
           <Navbar />
 

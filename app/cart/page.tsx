@@ -106,19 +106,6 @@ export default function CartPage() {
               />
             </div>
 
-            <p className="mb-4 rounded-xl border border-[#7d1d2a]/20 bg-[#7d1d2a]/5 p-3 text-xs font-bold leading-6 text-[#5d2a2a]">
-              <span className="font-bold text-red-500">⚠️ توجه توجه</span><br />
-              مشتری عزیز لطفاً طبق ایتم های مد نظرتون جمع کل حساب را محاسبه کنید و در فیلد جمع کل بنویسید یا در دایرکت ثبت کنید
-            </p>
-            <a
-              href="https://instagram.com/shine._bride"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full rounded-full bg-gradient-to-r from-[#7d1d2a] to-[#ad2e3f] py-3.5 text-center text-sm text-white shadow-lg shadow-[#7d1d2a]/30 transition hover:-translate-y-0.5"
-            >
-              ثبت سفارش از اینستاگرام
-            </a>
-
             <a
               href="https://wa.me/989011322245"
               target="_blank"
